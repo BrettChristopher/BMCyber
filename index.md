@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# Welcome to BCM Cyber
+# Welcome to BM Cyber
 
 Your go-to place for cybersecurity tools, tutorials, news, and resources.
 
