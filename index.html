@@ -2,121 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BM Cyber</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0e1012;
+      font-family: Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background-color: #121212;
       color: white;
     }
-    .hero {
-      height: 100vh;
-      background: linear-gradient(to bottom, #0d1117 60%, #0e1012);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
+
+    nav {
+      width: 200px;
+      background-color: #1e1e1e;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
     }
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      color: #58a6ff;
+
+    nav h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
     }
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
-    }
-    .hero a {
-      background-color: #58a6ff;
-      color: #0d1117;
-      padding: 0.8rem 2rem;
-      border-radius: 8px;
-      font-weight: bold;
+
+    nav a {
+      display: block;
+      color: white;
       text-decoration: none;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
     }
-    .section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
+
+    nav a:hover {
+      background-color: #333;
     }
-    .cards {
+
+    .main {
+      margin-left: 220px;
+      padding: 40px;
+      flex-grow: 1;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #ccc;
+    }
+
+    .sections {
+      margin-top: 60px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      gap: 20px;
     }
+
     .card {
-      background-color: #161b22;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      transition: 0.2s;
+      background-color: #222;
+      border-radius: 10px;
+      padding: 20px;
+      transition: 0.3s;
     }
+
     .card:hover {
-      background-color: #21262d;
+      background-color: #333;
     }
+
     .card h3 {
-      margin: 1rem 0 0.5rem;
+      margin-top: 0;
     }
+
     .card p {
-      font-size: 0.95rem;
+      color: #bbb;
     }
+
     .card a {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #58a6ff;
+      color: #66b2ff;
       text-decoration: none;
-      font-weight: bold;
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #8b949e;
-      background-color: #0d1117;
+
+    .card a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>BM Cyber</h1>
-    <p>Cybersecurity tools, blue team strategy, and CYSA+ resources — built for professionals and learners alike.</p>
-    <a href="#explore">Explore</a>
-  </div>
 
-  <div class="section" id="explore">
-    <h2 style="text-align: center;">Explore</h2>
-    <div class="cards">
+  <nav>
+    <h2>BM Cyber</h2>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+
+  <div class="main">
+    <div class="hero">
+      <h1>BM Cyber</h1>
+      <p>Cybersecurity, Blue Team Ops, and Learning</p>
+    </div>
+
+    <div class="sections">
       <div class="card">
         <h3>CYSA+ Practice</h3>
-        <p>Prep for the CompTIA CYSA+ exam with practice tools, definitions, and real-world examples.</p>
-        <a href="#">Read More →</a>
+        <p>Hands-on blue team and exam prep content.</p>
+        <a href="cysa.html">Read more →</a>
       </div>
       <div class="card">
         <h3>Blue Team Toolkit</h3>
-        <p>Explore tools like Wireshark, Zeek, Security Onion, Splunk, and more — with tips and use cases.</p>
-        <a href="#">Read More →</a>
+        <p>Tools and walkthroughs for monitoring and defense.</p>
+        <a href="tools.html">Read more →</a>
       </div>
       <div class="card">
         <h3>Threat Detection</h3>
-        <p>Learn how to analyze logs, detect threats, and respond to incidents in real-world environments.</p>
-        <a href="#">Read More →</a>
+        <p>How to catch attackers and detect threats in real time.</p>
+        <a href="detection.html">Read more →</a>
       </div>
       <div class="card">
         <h3>Blog / Notes</h3>
-        <p>Cyber notes, blue team thoughts, home lab builds, and personal insights from the field.</p>
-        <a href="#">Read More →</a>
+        <p>Writeups, walkthroughs, study logs, and insights.</p>
+        <a href="blog.html">Read more →</a>
       </div>
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 BM Cyber • Powered by GitHub Pages
-  </footer>
 </body>
 </html>
