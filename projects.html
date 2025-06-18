@@ -2,57 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects – BM Cyber</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background-color: #B2835B;
       color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #000;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #2f2f2f;
-      padding: 1rem;
       display: flex;
-      gap: 1rem;
-      justify-content: center;
     }
 
-    nav a {
+    .sidebar {
+      width: 200px;
+      background-color: #2f2f2f;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar a {
       color: #fff;
       text-decoration: none;
+      margin: 1rem 0;
       font-weight: bold;
     }
 
-    nav a:hover {
+    .sidebar a:hover {
       text-decoration: underline;
     }
 
     .content {
+      margin-left: 220px;
+      padding: 2rem;
       max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    h2 {
-      text-align: center;
-    }
-
-    ul {
-      padding-left: 1.5rem;
     }
 
     img {
@@ -61,20 +49,20 @@
       border-radius: 8px;
       margin-top: 1rem;
     }
+
+    ul {
+      padding-left: 1.2rem;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>BM Cyber Projects</h1>
-  </header>
-
-  <nav>
+  <div class="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="projects.html">Projects</a>
-  </nav>
+  </div>
 
   <div class="content">
     <h2>🔵 Blue Team Home Lab</h2>
@@ -111,7 +99,7 @@
     <ul>
       <li>VirtualBox / VMware – Run virtual machines (VMs)</li>
       <li>Kali Linux ISO – Pentesting tools – <a href="https://kali.org" target="_blank">kali.org</a></li>
-      <li>Ubuntu Server/Desktop ISO – Lightweight VMs – <a href="https://ubuntu.com" target="_blank">ubuntu.com</a></li>
+      <li>Ubuntu ISO – Lightweight VMs – <a href="https://ubuntu.com" target="_blank">ubuntu.com</a></li>
       <li>Windows 10 ISO – Client VM – <a href="https://www.microsoft.com/en-us/evalcenter/" target="_blank">Microsoft Eval</a></li>
       <li>Wireshark – Packet analysis – <a href="https://wireshark.org" target="_blank">wireshark.org</a></li>
       <li>Nmap/Zenmap – Network scanning – <a href="https://nmap.org" target="_blank">nmap.org</a></li>
@@ -132,8 +120,9 @@
     </ul>
 
     <h3>🖼️ Blue Team Lab Network Diagram</h3>
-    <img src="lab.png" alt="Blue Team Lab Diagram" />
+    <img src="./lab.png" alt="Blue Team Lab Diagram" />
   </div>
 
 </body>
 </html>
+
