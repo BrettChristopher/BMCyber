@@ -4,14 +4,14 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   min-height: 100vh;
-  background-color: #2d004d; /* deep purple */
-  color: white;
+  background-color: #b2835b; /* Mocha Mousse */
+  color: black;
 }
 
 /* Sidebar navigation */
 nav {
   width: 200px;
-  background-color: #3a0066;
+  background-color: #8a5c38;
   padding: 20px;
   position: fixed;
   top: 0;
@@ -22,19 +22,21 @@ nav {
 nav h2 {
   font-size: 24px;
   margin-bottom: 30px;
+  color: black;
 }
 
 nav a {
   display: block;
-  color: white;
+  color: black;
   text-decoration: none;
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
+  background-color: #caa07d;
 }
 
 nav a:hover {
-  background-color: #4b0082;
+  background-color: #a5714e;
 }
 
 /* Main content */
@@ -46,16 +48,16 @@ nav a:hover {
 
 /* Headings and text */
 h1, h2, h3 {
-  color: white;
+  color: black;
 }
 
 p, li {
-  color: #e0e0e0;
+  color: black;
 }
 
 /* Links */
 a {
-  color: #aad0ff;
+  color: #000000;
 }
 
 a:hover {
@@ -71,14 +73,15 @@ a:hover {
 }
 
 .card {
-  background-color: #3a0066;
+  background-color: #caa07d;
   border-radius: 10px;
   padding: 20px;
   transition: 0.3s;
+  color: black;
 }
 
 .card:hover {
-  background-color: #4b0082;
+  background-color: #a5714e;
 }
 
 .card h3 {
@@ -86,7 +89,7 @@ a:hover {
 }
 
 .card a {
-  color: #aad0ff;
+  color: black;
   text-decoration: none;
 }
 
