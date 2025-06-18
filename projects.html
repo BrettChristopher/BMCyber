@@ -2,36 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Projects - BM Cyber</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – BM Cyber</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #B2835B;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #2f2f2f;
+      padding: 1rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    img {
+      max-width: 100%;
+      border: 1px solid #000;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
 
+  <header>
+    <h1>BM Cyber Projects</h1>
+  </header>
+
   <nav>
-    <h2>BM Cyber</h2>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="projects.html">Projects</a>
   </nav>
 
-  <div class="main">
-    <h1>Projects</h1>
-    <div class="sections">
+  <div class="content">
+    <h2>🔵 Blue Team Home Lab</h2>
 
-      <div class="card">
-        <h3>🔐 Blue Team Home Lab</h3>
-        <p>A fully virtualized cyber lab designed for defensive practice and CYSA+ study. Includes tools like:</p>
-        <ul>
-          <li>Security Onion</li>
-          <li>Kali Linux</li>
-          <li>Splunk</li>
-          <li>Windows 10 & Server 2019</li>
-        </ul>
-        <p>This lab is built using VirtualBox and runs on a ThinkPad T480. I use it for packet analysis, SIEM logging, and threat detection exercises.</p>
-      </div>
+    <p><strong>Lenovo ThinkPad T480</strong></p>
+    <ul>
+      <li>CPU: Intel Core i5-8250U (8th Gen)</li>
+      <li>RAM: 16GB DDR4</li>
+      <li>Storage: 512GB SSD</li>
+      <li>Display: 14” FHD (1920x1080)</li>
+      <li>OS: Windows 11 Pro</li>
+      <li>Ports: USB-C, USB 3.0, Ethernet, HDMI</li>
+    </ul>
 
-    </div>
+    <p><strong>Tasks</strong></p>
+    <ul>
+      <li>Run VirtualBox or VMware Workstation Player for hosting:</li>
+      <ul>
+        <li>Kali Linux (offensive tools)</li>
+        <li>Ubuntu (target or SIEM log source)</li>
+        <li>Windows 10 Eval (log source, client system)</li>
+      </ul>
+      <li>Analyze:</li>
+      <ul>
+        <li>Logs in Splunk</li>
+        <li>Network packets in Wireshark</li>
+        <li>Vulnerability scan results</li>
+      </ul>
+      <li>SSH into the mini PC or other devices</li>
+      <li>Write incident reports, study, and manage your lab</li>
+    </ul>
+
+    <p><strong>Key Tools:</strong></p>
+    <ul>
+      <li>VirtualBox / VMware – Run virtual machines (VMs)</li>
+      <li>Kali Linux ISO – Pentesting tools – <a href="https://kali.org" target="_blank">kali.org</a></li>
+      <li>Ubuntu Server/Desktop ISO – Lightweight VMs – <a href="https://ubuntu.com" target="_blank">ubuntu.com</a></li>
+      <li>Windows 10 ISO – Client VM – <a href="https://www.microsoft.com/en-us/evalcenter/" target="_blank">Microsoft Eval</a></li>
+      <li>Wireshark – Packet analysis – <a href="https://wireshark.org" target="_blank">wireshark.org</a></li>
+      <li>Nmap/Zenmap – Network scanning – <a href="https://nmap.org" target="_blank">nmap.org</a></li>
+      <li>Splunk Free – SIEM/log analysis – <a href="https://splunk.com" target="_blank">splunk.com</a></li>
+    </ul>
+
+    <p><strong>Netgear GS308 – 8-Port Unmanaged Gigabit Switch</strong></p>
+    <ul>
+      <li>Type: Unmanaged</li>
+      <li>Use Case: Simple plug-and-play connectivity</li>
+    </ul>
+
+    <p><strong>🔧 Ideal for:</strong></p>
+    <ul>
+      <li>VirtualBox or VMware Workstation VMs</li>
+      <li>Log analysis and security tools (Splunk, Wireshark)</li>
+      <li>Portability with power</li>
+    </ul>
+
+    <h3>🖼️ Blue Team Lab Network Diagram</h3>
+    <img src="lab.png" alt="Blue Team Lab Diagram" />
   </div>
 
 </body>
