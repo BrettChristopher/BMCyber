@@ -1,0 +1,95 @@
+/* Global layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #2d004d; /* deep purple */
+  color: white;
+}
+
+/* Sidebar navigation */
+nav {
+  width: 200px;
+  background-color: #3a0066;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+nav h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: #4b0082;
+}
+
+/* Main content */
+.main {
+  margin-left: 220px;
+  padding: 40px;
+  flex-grow: 1;
+}
+
+/* Headings and text */
+h1, h2, h3 {
+  color: white;
+}
+
+p, li {
+  color: #e0e0e0;
+}
+
+/* Links */
+a {
+  color: #aad0ff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Cards on homepage */
+.sections {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #3a0066;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background-color: #4b0082;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card a {
+  color: #aad0ff;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
