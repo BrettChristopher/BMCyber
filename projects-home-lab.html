@@ -46,38 +46,52 @@
     }
 
     /* Styles for general text elements within content, matching about.html */
-    h2, h3, p, ul, li {
-      color: #ffffff; /* All text white */
+    h2 {
+      color: #ffffff; /* Main page title remains white */
     }
 
-    ul {
+    /* New style for individual section cards */
+    .section-card {
+      background-color: #444; /* Slightly lighter background than body */
+      padding: 1.5rem;
+      margin-bottom: 2rem; /* Space between sections */
+      border-radius: 10px;
+      border-left: 5px solid #C4B2D3; /* Darker lavender border */
+    }
+
+    .section-card h3 {
+      color: #C4B2D3; /* Darker lavender for section titles */
+      margin-top: 0;
+      margin-bottom: 1rem; /* Space below title */
+    }
+
+    .section-card p,
+    .section-card ul,
+    .section-card ul li {
+      color: #ddd; /* Slightly off-white for body text within cards */
+    }
+
+    .section-card ul {
       padding-left: 1.2rem;
     }
 
-    /* Default link color from about.html */
-    a {
+    /* Default link color from about.html for links within section cards */
+    .section-card a {
       color: #1a73e8;
-      text-decoration: none; /* Ensure consistent link styling */
+      text-decoration: none;
     }
 
-    a:hover {
+    .section-card a:hover {
       text-decoration: underline;
     }
 
-    /* If you have specific images on this page that need border/radius */
+    /* Styles for images */
     img {
       max-width: 100%;
       border: 1px solid #888;
       border-radius: 8px;
       margin-top: 1rem;
     }
-
-    /*
-      Important:
-      The .project-card style is *not* used for the main sections on this page.
-      It is still defined in projects.html for the project summaries.
-      This page just uses standard h3, p, ul for structure.
-    */
   </style>
 </head>
 <body>
@@ -92,65 +106,79 @@
   <div class="content">
     <h2>🔵 Blue Team Home Lab Details</h2>
 
-    <p>This project outlines the setup of a personal cybersecurity lab using a Lenovo ThinkPad T480, leveraging VirtualBox or VMware Workstation Player for hosting various virtual machines for offensive and defensive security exercises. The lab focuses on analyzing logs with Splunk, network packets with Wireshark, and managing a robust environment for continuous learning and incident response practice.</p>
+    <div class="section-card">
+        <p>This project outlines the setup of a personal cybersecurity lab using a Lenovo ThinkPad T480, leveraging VirtualBox or VMware Workstation Player for hosting various virtual machines for offensive and defensive security exercises. The lab focuses on analyzing logs with Splunk, network packets with Wireshark, and managing a robust environment for continuous learning and incident response practice.</p>
+    </div>
 
-    <h3>💻 Primary Hardware: Lenovo ThinkPad T480</h3>
-    <ul>
-      <li><strong>CPU:</strong> Intel Core i5-8250U (8th Gen)</li>
-      <li><strong>RAM:</strong> 16GB DDR4</li>
-      <li><strong>Storage:</strong> 512GB SSD</li>
-      <li><strong>Display:</strong> 14” FHD (1920x1080)</li>
-      <li><strong>OS:</strong> Windows 11 Pro</li>
-      <li><strong>Ports:</strong> USB-C, USB 3.0, Ethernet, HDMI</li>
-    </ul>
+    <div class="section-card">
+      <h3>💻 Primary Hardware: Lenovo ThinkPad T480</h3>
+      <ul>
+        <li><strong>CPU:</strong> Intel Core i5-8250U (8th Gen)</li>
+        <li><strong>RAM:</strong> 16GB DDR4</li>
+        <li><strong>Storage:</strong> 512GB SSD</li>
+        <li><strong>Display:</strong> 14” FHD (1920x1080)</li>
+        <li><strong>OS:</strong> Windows 11 Pro</li>
+        <li><strong>Ports:</strong> USB-C, USB 3.0, Ethernet, HDMI</li>
+      </ul>
+    </div>
 
-    <h3>📋 Key Tasks</h3>
-    <ul>
-      <li>Run VirtualBox or VMware Workstation Player for hosting:
-        <ul>
-          <li>Kali Linux (offensive tools)</li>
-          <li>Ubuntu (target or SIEM log source)</li>
-          <li>Windows 10 Eval (log source, client system)</li>
-        </ul>
-      </li>
-      <li>Analyze:
-        <ul>
-          <li>Logs in Splunk</li>
-          <li>Network packets in Wireshark</li>
-          <li>Vulnerability scan results</li>
-        </ul>
-      </li>
-      <li>SSH into the mini PC or other devices</li>
-      <li>Write incident reports, study, and manage your lab</li>
-    </ul>
+    <div class="section-card">
+      <h3>📋 Key Tasks</h3>
+      <ul>
+        <li>Run VirtualBox or VMware Workstation Player for hosting:
+          <ul>
+            <li>Kali Linux (offensive tools)</li>
+            <li>Ubuntu (target or SIEM log source)</li>
+            <li>Windows 10 Eval (log source, client system)</li>
+          </ul>
+        </li>
+        <li>Analyze:
+          <ul>
+            <li>Logs in Splunk</li>
+            <li>Network packets in Wireshark</li>
+            <li>Vulnerability scan results</li>
+          </ul>
+        </li>
+        <li>SSH into the mini PC or other devices</li>
+        <li>Write incident reports, study, and manage your lab</li>
+      </ul>
+    </div>
 
-    <h3>🛠️ Key Tools</h3>
-    <ul>
-      <li><strong>VirtualBox / VMware:</strong> Run virtual machines (VMs)</li>
-      <li><strong>Kali Linux ISO:</strong> Pentesting tools – <a href="https://www.kali.org/" target="_blank">kali.org</a></li>
-      <li><strong>Ubuntu ISO:</strong> Lightweight VMs – <a href="https://ubuntu.com/" target="_blank">ubuntu.com</a></li>
-      <li><strong>Windows 10 ISO:</strong> Client VM – Microsoft Eval</li>
-      <li><strong>Wireshark:</strong> Packet analysis – <a href="https://www.wireshark.org/" target="_blank">wireshark.org</a></li>
-      <li><strong>Nmap/Zenmap:</strong> Network scanning – <a href="https://nmap.org/" target="_blank">nmap.org</a></li>
-      <li><strong>Splunk Free:</strong> SIEM/log analysis – <a href="https://www.splunk.com/" target="_blank">splunk.com</a></li>
-    </ul>
+    <div class="section-card">
+      <h3>🛠️ Key Tools</h3>
+      <ul>
+        <li><strong>VirtualBox / VMware:</strong> Run virtual machines (VMs)</li>
+        <li><strong>Kali Linux ISO:</strong> Pentesting tools – <a href="https://www.kali.org/" target="_blank">kali.org</a></li>
+        <li><strong>Ubuntu ISO:</strong> Lightweight VMs – <a href="https://ubuntu.com/" target="_blank">ubuntu.com</a></li>
+        <li><strong>Windows 10 ISO:</strong> Client VM – Microsoft Eval</li>
+        <li><strong>Wireshark:</strong> Packet analysis – <a href="https://www.wireshark.org/" target="_blank">wireshark.org</a></li>
+        <li><strong>Nmap/Zenmap:</strong> Network scanning – <a href="https://nmap.org/" target="_blank">nmap.org</a></li>
+        <li><strong>Splunk Free:</strong> SIEM/log analysis – <a href="https://www.splunk.com/" target="_blank">splunk.com</a></li>
+      </ul>
+    </div>
 
-    <h3>🔌 Network Component: Netgear GS308 – 8-Port Unmanaged Gigabit Switch</h3>
-    <ul>
-      <li><strong>Type:</strong> Unmanaged</li>
-      <li><strong>Use Case:</strong> Simple plug-and-play connectivity</li>
-    </ul>
+    <div class="section-card">
+      <h3>🔌 Network Component: Netgear GS308 – 8-Port Unmanaged Gigabit Switch</h3>
+      <ul>
+        <li><strong>Type:</strong> Unmanaged</li>
+        <li><strong>Use Case:</strong> Simple plug-and-play connectivity</li>
+      </ul>
+    </div>
 
-    <h3>💡 Ideal for:</h3>
-    <ul>
-      <li>VirtualBox or VMware Workstation VMs</li>
-      <li>Log analysis and security tools (Splunk, Wireshark)</li>
-      <li>Portability with power</li>
-    </ul>
+    <div class="section-card">
+      <h3>💡 Ideal for:</h3>
+      <ul>
+        <li>VirtualBox or VMware Workstation VMs</li>
+        <li>Log analysis and security tools (Splunk, Wireshark)</li>
+        <li>Portability with power</li>
+      </ul>
+    </div>
 
-    <h3>🖼️ Blue Team Lab Network Diagram</h3>
-    <p>A visual representation of my lab's network setup:</p>
-    <img src="lab.png" alt="Blue Team Lab Network Diagram">
+    <div class="section-card">
+      <h3>🖼️ Blue Team Lab Network Diagram</h3>
+      <p>A visual representation of my lab's network setup:</p>
+      <img src="lab.png" alt="Blue Team Lab Network Diagram">
+    </div>
 
   </div>
 
