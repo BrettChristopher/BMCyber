@@ -1,39 +1,176 @@
-Lenovo ThinkPad T480
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Team Home Lab – BM Cyber</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      background-color: #333;
+      color: #ffffff;
+      display: flex;
+    }
 
-CPU: Intel Core i5-8250U (8th Gen)
-RAM: 16GB DDR4
-Storage: 512GB SSD
-Display: 14” FHD (1920x1080)
-OS: Windows 11 Pro
-Ports: USB-C, USB 3.0, Ethernet, HDMI
-Tasks
+    .sidebar {
+      width: 220px;
+      background-color: #333;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 2px solid #666;
+    }
 
-Run VirtualBox or VMware Workstation Player for hosting:
-Kali Linux (offensive tools)
-Ubuntu (target or SIEM log source)
-Windows 10 Eval (log source, client system)
-Analyze:
-Logs in Splunk
-Network packets in Wireshark
-Vulnerability scan results
-SSH into the mini PC or other devices
-Write incident reports, study, and manage your lab
-Key Tools:
+    .sidebar a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
 
-VirtualBox / VMware – Run virtual machines (VMs)
-Kali Linux ISO – Pentesting tools – kali.org
-Ubuntu ISO – Lightweight VMs – ubuntu.com
-Windows 10 ISO – Client VM – Microsoft Eval
-Wireshark – Packet analysis – wireshark.org
-Nmap/Zenmap – Network scanning – nmap.org
-Splunk Free – SIEM/log analysis – splunk.com
-Netgear GS308 – 8-Port Unmanaged Gigabit Switch
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
 
-Type: Unmanaged
-Use Case: Simple plug-and-play connectivity
-🔧 Ideal for:
+    .content {
+      margin-left: 240px;
+      padding: 2rem;
+      max-width: 1000px;
+    }
 
-VirtualBox or VMware Workstation VMs
-Log analysis and security tools (Splunk, Wireshark)
-Portability with power
-🖼️ Blue Team Lab Network Diagram
+    h2 {
+      margin-top: 0;
+      color: #C4B2D3; /* Matching the darker lavender */
+    }
+
+    h3 {
+      color: #C4B2D3; /* Matching the darker lavender */
+      margin-top: 0;
+    }
+
+    .project-card {
+      background-color: #444;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      border-left: 5px solid #C4B2D3; /* Darker lavender */
+    }
+
+    .project-card p {
+      color: #ddd;
+    }
+
+    .project-card ul {
+      color: #ddd;
+      list-style-type: disc;
+      margin-left: 20px;
+      padding-left: 0;
+    }
+
+    .project-card ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card a {
+      color: #C4B2D3; /* Darker lavender */
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      border: 1px solid #888;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="projects.html">Projects</a>
+  </div>
+
+  <div class="content">
+    <h2>🔵 Blue Team Home Lab Details</h2>
+
+    <div class="project-card">
+      <h3>💻 Primary Hardware: Lenovo ThinkPad T480</h3>
+      <ul>
+        <li><strong>CPU:</strong> Intel Core i5-8250U (8th Gen)</li>
+        <li><strong>RAM:</strong> 16GB DDR4</li>
+        <li><strong>Storage:</strong> 512GB SSD</li>
+        <li><strong>Display:</strong> 14” FHD (1920x1080)</li>
+        <li><strong>OS:</strong> Windows 11 Pro</li>
+        <li><strong>Ports:</strong> USB-C, USB 3.0, Ethernet, HDMI</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>📋 Key Tasks</h3>
+      <ul>
+        <li>Run VirtualBox or VMware Workstation Player for hosting:
+          <ul>
+            <li>Kali Linux (offensive tools)</li>
+            <li>Ubuntu (target or SIEM log source)</li>
+            <li>Windows 10 Eval (log source, client system)</li>
+          </ul>
+        </li>
+        <li>Analyze:
+          <ul>
+            <li>Logs in Splunk</li>
+            <li>Network packets in Wireshark</li>
+            <li>Vulnerability scan results</li>
+          </ul>
+        </li>
+        <li>SSH into the mini PC or other devices</li>
+        <li>Write incident reports, study, and manage your lab</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>🛠️ Key Tools</h3>
+      <ul>
+        <li><strong>VirtualBox / VMware:</strong> Run virtual machines (VMs)</li>
+        <li><strong>Kali Linux ISO:</strong> Pentesting tools – <a href="https://www.kali.org/" target="_blank">kali.org</a></li>
+        <li><strong>Ubuntu ISO:</strong> Lightweight VMs – <a href="https://ubuntu.com/" target="_blank">ubuntu.com</a></li>
+        <li><strong>Windows 10 ISO:</strong> Client VM – Microsoft Eval</li>
+        <li><strong>Wireshark:</strong> Packet analysis – <a href="https://www.wireshark.org/" target="_blank">wireshark.org</a></li>
+        <li><strong>Nmap/Zenmap:</strong> Network scanning – <a href="https://nmap.org/" target="_blank">nmap.org</a></li>
+        <li><strong>Splunk Free:</strong> SIEM/log analysis – <a href="https://www.splunk.com/" target="_blank">splunk.com</a></li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>🔌 Network Component: Netgear GS308 – 8-Port Unmanaged Gigabit Switch</h3>
+      <ul>
+        <li><strong>Type:</strong> Unmanaged</li>
+        <li><strong>Use Case:</strong> Simple plug-and-play connectivity</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>💡 Ideal for:</h3>
+      <ul>
+        <li>VirtualBox or VMware Workstation VMs</li>
+        <li>Log analysis and security tools (Splunk, Wireshark)</li>
+        <li>Portability with power</li>
+      </ul>
+    </div>
+
+    </div>
+
+</body>
+</html>
