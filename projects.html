@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Calibri, sans-serif;
-      background-color: #333; /* Match sidebar background */
+      background-color: #333;
       color: #ffffff;
       display: flex;
     }
@@ -41,22 +41,44 @@
     .content {
       margin-left: 240px;
       padding: 2rem;
-      max-width: 800px;
+      max-width: 1000px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .project-card {
+      background-color: #444;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      border-left: 5px solid #1a73e8;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: #1a73e8;
+    }
+
+    .project-card p {
+      color: #ddd;
+    }
+
+    .project-card a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
     }
 
     img {
       max-width: 100%;
-      border: 1px solid #ccc;
+      border: 1px solid #888;
       border-radius: 8px;
       margin-top: 1rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    a {
-      color: #1a73e8;
     }
   </style>
 </head>
@@ -70,62 +92,22 @@
   </div>
 
   <div class="content">
-    <h2>🔵 Blue Team Home Lab</h2>
+    <h2>📂 Projects</h2>
 
-    <p><strong>Lenovo ThinkPad T480</strong></p>
-    <ul>
-      <li>CPU: Intel Core i5-8250U (8th Gen)</li>
-      <li>RAM: 16GB DDR4</li>
-      <li>Storage: 512GB SSD</li>
-      <li>Display: 14” FHD (1920x1080)</li>
-      <li>OS: Windows 11 Pro</li>
-      <li>Ports: USB-C, USB 3.0, Ethernet, HDMI</li>
-    </ul>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>🔵 Blue Team Home Lab</h3>
+      <p>This project outlines the setup of a personal cybersecurity lab using VirtualBox, Kali Linux, Splunk, Wireshark, and more.</p>
+      <p><a href="projects-home-lab.html">View Full Project →</a></p>
+    </div>
 
-    <p><strong>Tasks</strong></p>
-    <ul>
-      <li>Run VirtualBox or VMware Workstation Player for hosting:</li>
-      <ul>
-        <li>Kali Linux (offensive tools)</li>
-        <li>Ubuntu (target or SIEM log source)</li>
-        <li>Windows 10 Eval (log source, client system)</li>
-      </ul>
-      <li>Analyze:</li>
-      <ul>
-        <li>Logs in Splunk</li>
-        <li>Network packets in Wireshark</li>
-        <li>Vulnerability scan results</li>
-      </ul>
-      <li>SSH into the mini PC or other devices</li>
-      <li>Write incident reports, study, and manage your lab</li>
-    </ul>
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>🐍 Python</h3>
+      <p>Hands-on projects using Python for scripting, automation, log parsing, and basic security tool development. Content coming soon.</p>
+      <p><a href="projects-python.html">View Full Project →</a></p>
+    </div>
 
-    <p><strong>Key Tools:</strong></p>
-    <ul>
-      <li>VirtualBox / VMware – Run virtual machines (VMs)</li>
-      <li>Kali Linux ISO – Pentesting tools – <a href="https://kali.org" target="_blank">kali.org</a></li>
-      <li>Ubuntu ISO – Lightweight VMs – <a href="https://ubuntu.com" target="_blank">ubuntu.com</a></li>
-      <li>Windows 10 ISO – Client VM – <a href="https://www.microsoft.com/en-us/evalcenter/" target="_blank">Microsoft Eval</a></li>
-      <li>Wireshark – Packet analysis – <a href="https://wireshark.org" target="_blank">wireshark.org</a></li>
-      <li>Nmap/Zenmap – Network scanning – <a href="https://nmap.org" target="_blank">nmap.org</a></li>
-      <li>Splunk Free – SIEM/log analysis – <a href="https://splunk.com" target="_blank">splunk.com</a></li>
-    </ul>
-
-    <p><strong>Netgear GS308 – 8-Port Unmanaged Gigabit Switch</strong></p>
-    <ul>
-      <li>Type: Unmanaged</li>
-      <li>Use Case: Simple plug-and-play connectivity</li>
-    </ul>
-
-    <p><strong>🔧 Ideal for:</strong></p>
-    <ul>
-      <li>VirtualBox or VMware Workstation VMs</li>
-      <li>Log analysis and security tools (Splunk, Wireshark)</li>
-      <li>Portability with power</li>
-    </ul>
-
-    <h3>🖼️ Blue Team Lab Network Diagram</h3>
-    <img src="lab.png" alt="Blue Team Lab Diagram" />
   </div>
 
 </body>
