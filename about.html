@@ -2,22 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About - BM Cyber</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – BM Cyber</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #00FF00;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #111;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid #00FF00;
+    }
+
+    .sidebar a {
+      color: #00FF00;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      margin-left: 220px;
+      padding: 2rem;
+      max-width: 800px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    a {
+      color: #00FF00;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
 
-  <nav>
-    <h2>BM Cyber</h2>
+  <div class="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="projects.html">Projects</a>
-  </nav>
+  </div>
 
-  <div class="main">
-    <h1>About BM Cyber</h1>
-    <p>BM Cyber is dedicated to practical cybersecurity knowledge — from blue team tools and strategies to CYSA+ prep and beyond. This site is maintained by Brett M., an ISSO and cyber enthusiast focused on real-world defense, detection, and continuous learning.</p>
+  <div class="content">
+    <h2>👤 About Me</h2>
+
+    <div class="section">
+      <p><strong>Current Role:</strong> Senior Consultant at Deloitte</p>
+      <p><strong>Education:</strong> Pursuing M.S. in Cybersecurity at Georgia Institute of Technology</p>
+      <p><strong>Interests:</strong> Blue Team Operations, Identity & Access Management (IAM), Python, Open Source Tools</p>
+    </div>
+
+    <div class="section">
+      <h3>🧰 Experience</h3>
+      <p><strong>Deloitte</strong><br/>
+      <em>Senior Consultant</em> (October 2022 – Present)</p>
+    </div>
+
+    <div class="section">
+      <h3>📜 Certifications</h3>
+      <ul>
+        <li>CompTIA Security+ – <em>Certified</em></li>
+        <li>CompTIA CySA+ – <em>In progress</em></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>🛠️ Skills</h3>
+      <ul>
+        <li>Wireshark, Splunk, Security Onion</li>
+        <li>SQL, Tableau, Power BI</li>
+        <li>Visio, JIRA, SharePoint</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>📚 Frameworks</h3>
+      <ul>
+        <li>NIST Cybersecurity Framework (CSF)</li>
+        <li>NIST 800-53</li>
+        <li>Risk Management Framework (RMF)</li>
+      </ul>
+    </div>
   </div>
 
 </body>
