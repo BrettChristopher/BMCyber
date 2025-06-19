@@ -2,24 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About - BM Cyber</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – BM Cyber</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      background-color: #333;
+      color: #ffffff;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #333;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 2px solid #666;
+    }
+
+    .sidebar a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 2rem;
+      max-width: 800px;
+    }
+
+    h2, h3, p {
+      color: #ffffff;
+    }
+
+    .post-preview {
+      background-color: #444;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-preview a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    .post-preview a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-  <nav>
-    <h2>BM Cyber</h2>
+  <div class="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="projects.html">Projects</a>
-  </nav>
+  </div>
 
-  <div class="main">
-    <h1>About BM Cyber</h1>
-    <p>BM Cyber is dedicated to practical cybersecurity knowledge — from blue team tools and strategies to CYSA+ prep and beyond. This site is maintained by Brett Mejasic, an ISSO and cyber enthusiast focused on real-world defense, detection, and continuous learning.</p>
+  <div class="content">
+    <h2>📝 Blog</h2>
+
+    <div class="post-preview">
+      <h3><a href="projects.html">🔵 Blue Team Home Lab</a></h3>
+      <p>A breakdown of my virtualized security lab environment and tools I use to practice incident response, log analysis, and packet inspection.</p>
+    </div>
+
+    <!-- Add more blog posts here as needed -->
   </div>
 
 </body>
 </html>
-
