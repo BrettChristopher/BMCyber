@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wireshark – Analyzing HTTP Traffic</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      background-color: #333;
+      color: #ffffff;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #333;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 2px solid #666;
+    }
+
+    .sidebar a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 2rem;
+      max-width: 800px;
+    }
+
+    h2, h3 {
+      color: #1a73e8;
+    }
+
+    p, li {
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    a {
+      color: #1a73e8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="projects.html">Projects</a>
+  </div>
+
+  <div class="content">
+    <h2>Wireshark Projects: Analyzing HTTP Traffic</h2>
+
+    <p>In this project, I learned how to capture and analyze HTTP traffic via Wireshark. This is crucial for identifying network security issues, investigating deviations, and understanding web communication.</p>
+
+    <h3>Mastering HTTP Traffic Analysis with Wireshark</h3>
+    <p>This exercise helped me understand how to capture, filter, and analyze Hypertext Transfer Protocol (HTTP) traffic — essential skills for anyone looking to truly grasp web communication, troubleshoot network issues, or even do a little security investigation.</p>
+
+    <h3>Exercise 1: Capturing Web Traffic</h3>
+    <ul>
+      <li>I selected the network interface that was actively connected to the internet.</li>
+      <li>Started the capture in Wireshark.</li>
+      <li>Visited an HTTP site like <a href="http://example.com" target="_blank">http://example.com</a>.</li>
+      <li>Stopped the capture once the page loaded.</li>
+    </ul>
+    <p>This resulted in a capture full of HTTP requests and responses from my browser.</p>
+
+    <h3>Exercise 2: Filtering for HTTP</h3>
+    <ul>
+      <li>Used the top filter bar in Wireshark.</li>
+      <li>Typed <code>http</code> and pressed Enter.</li>
+    </ul>
+    <p>This narrowed the capture down to only HTTP traffic.</p>
+
+    <h3>Exercise 3: Analyzing HTTP Requests</h3>
+    <ul>
+      <li>Found an HTTP GET request and expanded the "Hypertext Transfer Protocol" section.</li>
+      <li>Reviewed URL, headers, and parameters.</li>
+    </ul>
+
+    <h3>Exercise 4: Analyzing HTTP Responses</h3>
+    <ul>
+      <li>Located the matching HTTP response.</li>
+      <li>Checked status codes, headers, and content type.</li>
+    </ul>
+
+    <h3>Exercise 5: Extracting and Examining Payload Data</h3>
+    <ul>
+      <li>Right-clicked the response and selected <strong>Follow > TCP Stream</strong>.</li>
+      <li>Viewed raw HTML content of the webpage.</li>
+    </ul>
+
+    <h3>Conclusion</h3>
+    <p>Completing these Wireshark exercises gave me a solid foundation in network analysis. These skills will help me better understand how the web works, troubleshoot network issues, and perform security analysis.</p>
+  </div>
+
+</body>
+</html>
