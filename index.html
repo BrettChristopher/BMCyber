@@ -15,7 +15,7 @@
 
     .sidebar {
       width: 220px;
-      background-color: #333;
+      background-color: #2c2a3a;
       height: 100vh;
       position: fixed;
       top: 0;
@@ -24,7 +24,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      border-right: 2px solid #666;
+      border-right: 2px solid #c9a0dc;
     }
 
     .sidebar a {
@@ -35,24 +35,23 @@
     }
 
     .sidebar a:hover {
+      color: #c9a0dc;
       text-decoration: underline;
     }
 
     .content {
       margin-left: 240px;
       padding: 2rem;
-      max-width: 800px;
+      max-width: 1000px;
     }
 
-    h1, h2, p {
-      color: #ffffff;
+    h1 {
+      color: #c9a0dc;
     }
 
-    img {
-      max-width: 100%;
-      border: 1px solid #888;
-      border-radius: 8px;
-      margin-top: 1rem;
+    p {
+      line-height: 1.6;
+      color: #ddd;
     }
   </style>
 </head>
@@ -66,10 +65,17 @@
   </div>
 
   <div class="content">
-    <h1>👋 Welcome to BM Cyber</h1>
-    <p>This site is dedicated to my journey and projects in cybersecurity, with a focus on Blue Teaming, SOC operations, hands-on labs, and more.</p>
-    <p>Explore my home lab setup, read posts about cyber tools, and check out practical blue team resources.</p>
+    <h1>Welcome to BM Cyber</h1>
+    <p>This is a personal cybersecurity website focused on Blue Team projects, tools, techniques, and educational content. Here you'll find:</p>
+    <ul>
+      <li>🔍 Hands-on labs and write-ups</li>
+      <li>🛡️ Cybersecurity fundamentals</li>
+      <li>📘 Blog entries exploring tools like Wireshark, Splunk, and Security Onion</li>
+      <li>👨‍💻 Python scripting and automation examples</li>
+    </ul>
+    <p>Content is continually updated as I explore new topics in cybersecurity.</p>
   </div>
 
 </body>
 </html>
+
