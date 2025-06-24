@@ -15,7 +15,7 @@
 
     .sidebar {
       width: 220px;
-      background-color: #333;
+      background-color: #2c2a3a;
       height: 100vh;
       position: fixed;
       top: 0;
@@ -24,7 +24,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      border-right: 2px solid #666;
+      border-right: 2px solid #c9a0dc;
     }
 
     .sidebar a {
@@ -35,25 +35,40 @@
     }
 
     .sidebar a:hover {
+      color: #c9a0dc;
       text-decoration: underline;
     }
 
     .content {
       margin-left: 240px;
       padding: 2rem;
-      max-width: 800px;
+      max-width: 1000px;
     }
 
-    h2, h3, p, li {
-      color: #ffffff;
+    h2 {
+      color: #c9a0dc;
+    }
+
+    h3 {
+      color: #c9a0dc;
+      margin-top: 1.5rem;
+    }
+
+    p, li {
+      line-height: 1.6;
+      color: #ddd;
     }
 
     ul {
-      padding-left: 1.2rem;
+      padding-left: 1.5rem;
     }
 
     a {
-      color: #1a73e8;
+      color: #c9a0dc;
+    }
+
+    a:hover {
+      color: #e3ccf5;
     }
   </style>
 </head>
@@ -67,39 +82,31 @@
   </div>
 
   <div class="content">
-    <h2>👤 About Me</h2>
+    <h2>About</h2>
+    <p><strong>Senior Consultant at Deloitte</strong><br />
+    Working towards a Master’s Degree in Cybersecurity at Georgia Institute of Technology<br />
+    Passionate about Blue Team operations, IAM, Python, and open source tools</p>
 
-    <p><strong>Senior Consultant at Deloitte</strong></p>
-    <p>Currently pursuing a Master's in Cybersecurity at Georgia Institute of Technology.</p>
-    <p>I'm passionate about Blue Team work, IAM, Python scripting, and open source tools.</p>
-
-    <h3>💼 Experience</h3>
+    <h3>Experience</h3>
     <ul>
-      <li>Deloitte – Senior Consultant (October 2022 – Present)</li>
+      <li><strong>Deloitte</strong> – Senior Consultant (Oct 2022 – Present)</li>
     </ul>
 
-    <h3>📜 Certifications</h3>
+    <h3>Certifications</h3>
     <ul>
-      <li>
-        CompTIA Security+ – Certificate: 
+      <li>CompTIA Security+ – Certificate: 
         <a href="https://www.certmetrics.com/comptia/candidate/cert_summary.aspx" target="_blank">Link</a>
       </li>
       <li>CompTIA CySA+ – <em>In progress</em></li>
     </ul>
 
-    <h3>🛠️ Skills</h3>
+    <h3>Skills</h3>
     <ul>
-      <li>Wireshark, Splunk, Security Onion, SQL, Tableau, Power BI</li>
-      <li>Visio, JIRA, SharePoint</li>
-    </ul>
-
-    <h3>📚 Frameworks</h3>
-    <ul>
-      <li>NIST CSF</li>
-      <li>NIST 800-53</li>
-      <li>Risk Management Framework (RMF)</li>
+      <li>Tools: Wireshark, Splunk, Security Onion, SQL, Tableau, Power BI, Visio, JIRA, SharePoint</li>
+      <li>Frameworks: NIST CSF, NIST 800-53, RMF</li>
     </ul>
   </div>
 
 </body>
 </html>
+
