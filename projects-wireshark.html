@@ -45,35 +45,24 @@
       max-width: 1000px;
     }
 
-    h2 {
+    h2, h3 {
       color: #c9a0dc;
     }
 
-    .post-preview {
-      background-color: #444;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-left: 5px solid #c9a0dc;
-      border-radius: 8px;
+    ul {
+      padding-left: 1.5rem;
     }
 
-    .post-preview h3 {
-      margin-top: 0;
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
       color: #c9a0dc;
     }
 
-    .post-preview p {
-      color: #ddd;
-    }
-
-    .post-preview a {
-      color: #c9a0dc;
-      text-decoration: none;
-    }
-
-    .post-preview a:hover {
+    a:hover {
       color: #e3ccf5;
-      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -94,17 +83,8 @@
         padding: 1rem;
       }
 
-      .sidebar a {
-        margin: 0;
-        font-size: 0.95rem;
-      }
-
       h2, h3 {
         font-size: 1.2rem;
-      }
-
-      .post-preview {
-        padding: 1rem;
       }
 
       body {
@@ -123,22 +103,14 @@
   </div>
 
   <div class="content">
-    <h2>🔍 Wireshark Projects</h2>
-
-    <div class="post-preview">
-      <h3><a href="blog-wireshark-http.html">Analyzing HTTP Traffic</a></h3>
-      <p>Step-by-step guide on capturing, filtering, and analyzing HTTP packets using Wireshark. Learn how to trace requests, responses, and payloads.</p>
-    </div>
-
-    <div class="post-preview">
-      <h3><a href="blog-wireshark-malware.html">Detecting and Investigating Malware Traffic</a></h3>
-      <p>Use Wireshark to analyze malware communication patterns, suspicious ports, payloads, and build reports from real PCAP malware samples.</p>
-    </div>
-<ul>
-  <li><a href="blog-wireshark-http.html">Analyzing HTTP Traffic</a></li>
-  <li><a href="blog-wireshark-intrusion.html">Detecting and Investigating Network Intrusion</a></li>
-</ul>
-
+    <h2>Wireshark Projects</h2>
+    <p>Explore my Wireshark-based cybersecurity projects, which focus on analyzing traffic, detecting threats, and developing packet-level insights.</p>
+    
+    <ul>
+      <li><a href="blog-wireshark-http.html">Analyzing HTTP Traffic</a></li>
+      <li><a href="blog-wireshark-intrusion.html">Detecting and Investigating Network Intrusion</a></li>
+      <li><a href="blog-wireshark-malware.html">Detecting and Investigating Malware Traffic</a></li>
+    </ul>
   </div>
 
 </body>
