@@ -8,10 +8,9 @@
     body {
       margin: 0;
       font-family: Calibri, sans-serif;
-      background-color: #2c2a3a;
-      color: white;
+      background-color: #333;
+      color: #ffffff;
       display: flex;
-      flex-direction: row;
     }
 
     .sidebar {
@@ -25,11 +24,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      border-right: 2px solid #c9a0dc;
+      border-right: 2px solid #c9a0dc; /* Lavender */
     }
 
     .sidebar a {
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       margin: 1rem 0;
       font-weight: bold;
@@ -42,69 +41,47 @@
 
     .content {
       margin-left: 240px;
-      padding: 3rem 2rem;
-      max-width: 900px;
+      padding: 2rem;
+      max-width: 1000px;
     }
 
     h2 {
-      font-size: 2rem;
-      color: #c9a0dc;
-      margin-bottom: 1.5rem;
+      margin-top: 0;
+      color: #c9a0dc; /* Lavender heading */
     }
 
-    .project-box {
-      background-color: #3a3749;
-      border: 2px solid #c9a0dc;
+    .project-card {
+      background-color: #444;
       padding: 1.5rem;
       margin-bottom: 2rem;
-      border-radius: 8px;
+      border-radius: 10px;
+      border-left: 5px solid #c9a0dc; /* Lavender accent */
     }
 
-    .project-box h3 {
-      color: #c9a0dc;
+    .project-card h3 {
       margin-top: 0;
+      color: #c9a0dc; /* Lavender */
     }
 
-    .project-box p {
-      color: white;
-      line-height: 1.6;
+    .project-card p {
+      color: #ddd;
     }
 
-    .project-box a {
+    .project-card a {
       color: #c9a0dc;
-      font-weight: bold;
       text-decoration: none;
     }
 
-    .project-box a:hover {
+    .project-card a:hover {
+      color: #e3ccf5; /* Lighter lavender */
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 1rem 0;
-        border-right: none;
-        border-bottom: 2px solid #c9a0dc;
-      }
-
-      .content {
-        margin-left: 0;
-        margin-top: 140px;
-        padding: 1rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      .project-box h3 {
-        font-size: 1.2rem;
-      }
+    img {
+      max-width: 100%;
+      border: 1px solid #888;
+      border-radius: 8px;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -118,25 +95,30 @@
   </div>
 
   <div class="content">
-    <h2>Wireshark Projects</h2>
+    <h2>🔍 Wireshark Projects</h2>
 
-    <div class="project-box">
-      <h3><a href="blog-wireshark-http.html">Analyzing HTTP Traffic</a></h3>
-      <p>A walkthrough of capturing and analyzing HTTP requests/responses in Wireshark. Includes hands-on filtering, TCP stream analysis, and payload inspection.</p>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>Analyzing HTTP Traffic</h3>
+      <p>A walkthrough of capturing and analyzing HTTP traffic using Wireshark, including packet filtering, stream analysis, and HTTP inspection.</p>
+      <p><a href="blog-wireshark-http.html">View Full Project →</a></p>
     </div>
 
-    <div class="project-box">
-      <h3><a href="blog-wireshark-intrusion.html">Detecting and Investigating Network Intrusion</a></h3>
-      <p>Learn how to detect Indicators of Compromise (IOCs), follow malicious streams, and identify intrusion attempts using filters and stream reassembly.</p>
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>Detecting and Investigating Malware Traffic</h3>
+      <p>Learn how to identify and analyze malware-infected traffic within PCAP files using filters, stream tracking, and payload investigation in Wireshark.</p>
+      <p><a href="blog-wireshark-malware.html">View Full Project →</a></p>
     </div>
 
-    <div class="project-box">
-      <h3><a href="blog-wireshark-malware.html">Detecting and Investigating Malware Traffic</a></h3>
-      <p>Step-by-step malware traffic analysis using PCAP files and Wireshark. Focused on identifying command-and-control behavior, suspicious ports, and reporting.</p>
+    <!-- Project 3 -->
+    <div class="project-card">
+      <h3>Network Intrusion Detection</h3>
+      <p>This project demonstrates using Wireshark to detect suspicious activity in a network capture and analyze indicators of compromise step-by-step.</p>
+      <p><a href="blog-wireshark-intrusion.html">View Full Project →</a></p>
     </div>
 
   </div>
 
 </body>
 </html>
-
