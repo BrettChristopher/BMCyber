@@ -49,31 +49,34 @@
     h2 {
       font-size: 2rem;
       color: #c9a0dc;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
       margin-bottom: 1.5rem;
     }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
+    .project-box {
+      background-color: #3a3749;
+      border: 2px solid #c9a0dc;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
     }
 
-    li {
-      margin-bottom: 1rem;
-    }
-
-    a {
+    .project-box h3 {
       color: #c9a0dc;
+      margin-top: 0;
+    }
+
+    .project-box p {
+      color: white;
+      line-height: 1.6;
+    }
+
+    .project-box a {
+      color: #c9a0dc;
+      font-weight: bold;
       text-decoration: none;
     }
 
-    a:hover {
-      color: #e3ccf5;
+    .project-box a:hover {
       text-decoration: underline;
     }
 
@@ -96,15 +99,11 @@
       }
 
       h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
 
-      p, li {
-        font-size: 0.95rem;
-      }
-
-      body {
-        flex-direction: column;
+      .project-box h3 {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -120,13 +119,22 @@
 
   <div class="content">
     <h2>Wireshark Projects</h2>
-    <p>This section showcases practical projects using Wireshark for traffic inspection, threat detection, and incident analysis.</p>
 
-    <ul>
-      <li><a href="blog-wireshark-http.html">Analyzing HTTP Traffic</a></li>
-      <li><a href="blog-wireshark-intrusion.html">Detecting and Investigating Network Intrusion</a></li>
-      <li><a href="blog-wireshark-malware.html">Detecting and Investigating Malware Traffic</a></li>
-    </ul>
+    <div class="project-box">
+      <h3><a href="blog-wireshark-http.html">Analyzing HTTP Traffic</a></h3>
+      <p>A walkthrough of capturing and analyzing HTTP requests/responses in Wireshark. Includes hands-on filtering, TCP stream analysis, and payload inspection.</p>
+    </div>
+
+    <div class="project-box">
+      <h3><a href="blog-wireshark-intrusion.html">Detecting and Investigating Network Intrusion</a></h3>
+      <p>Learn how to detect Indicators of Compromise (IOCs), follow malicious streams, and identify intrusion attempts using filters and stream reassembly.</p>
+    </div>
+
+    <div class="project-box">
+      <h3><a href="blog-wireshark-malware.html">Detecting and Investigating Malware Traffic</a></h3>
+      <p>Step-by-step malware traffic analysis using PCAP files and Wireshark. Focused on identifying command-and-control behavior, suspicious ports, and reporting.</p>
+    </div>
+
   </div>
 
 </body>
