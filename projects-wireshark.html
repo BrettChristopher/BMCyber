@@ -42,20 +42,29 @@
 
     .content {
       margin-left: 240px;
-      padding: 2rem;
+      padding: 3rem 2rem;
       max-width: 900px;
     }
 
-    h2, h3 {
+    h2 {
+      font-size: 2rem;
       color: #c9a0dc;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
     }
 
     ul {
+      list-style-type: disc;
       padding-left: 1.5rem;
     }
 
     li {
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
     }
 
     a {
@@ -65,6 +74,7 @@
 
     a:hover {
       color: #e3ccf5;
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -85,8 +95,12 @@
         padding: 1rem;
       }
 
-      h2, h3 {
-        font-size: 1.2rem;
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p, li {
+        font-size: 0.95rem;
       }
 
       body {
@@ -106,14 +120,4 @@
 
   <div class="content">
     <h2>Wireshark Projects</h2>
-    <p>This section contains hands-on projects using Wireshark to analyze real-world traffic, detect malware, and investigate network intrusions.</p>
-
-    <ul>
-      <li><a href="blog-wireshark-http.html">Analyzing HTTP Traffic</a></li>
-      <li><a href="blog-wireshark-intrusion.html">Detecting and Investigating Network Intrusion</a></li>
-      <li><a href="blog-wireshark-malware.html">Detecting and Investigating Malware Traffic</a></li>
-    </ul>
-  </div>
-
-</body>
-</html>
+    <p>This
