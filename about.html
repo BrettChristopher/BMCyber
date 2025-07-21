@@ -42,7 +42,7 @@
     .content {
       margin-left: 240px;
       padding: 2rem;
-      max-width: 900px;
+      width: calc(100% - 240px);
     }
 
     h2 {
@@ -56,6 +56,8 @@
       padding: 1.5rem;
       border-radius: 10px;
       border-left: 5px solid #c9a0dc;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .section h3 {
@@ -71,6 +73,10 @@
     a:hover {
       color: #e3ccf5;
       text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 1.2rem;
     }
   </style>
 </head>
@@ -121,5 +127,6 @@
 
 </body>
 </html>
+
 
 
