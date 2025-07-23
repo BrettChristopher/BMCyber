@@ -24,7 +24,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      border-right: 2px solid #c9a0dc;
+      border-right: 2px solid #c9a0dc; /* Lavender */
     }
 
     .sidebar a {
@@ -42,66 +42,54 @@
     .content {
       margin-left: 240px;
       padding: 2rem;
-      width: calc(100% - 240px);
+      max-width: 1000px;
     }
 
     h2 {
       margin-top: 0;
-      color: #c9a0dc;
+      color: #c9a0dc; /* Lavender heading */
     }
 
     .project-card {
       background-color: #444;
       padding: 1.5rem;
+      margin-bottom: 2rem;
       border-radius: 10px;
       border-left: 5px solid #c9a0dc;
-      margin-bottom: 2rem;
-      max-height: 250px;
-      overflow: hidden;
-      position: relative;
+      transition: background-color 0.2s ease;
     }
 
-    .project-card h3 {
-      margin-top: 0;
+    .project-card:hover {
+      background-color: #555;
+    }
+
+    .project-card a.title-link {
+      text-decoration: none;
       color: #c9a0dc;
+    }
+
+    .project-card a.title-link:hover {
+      text-decoration: underline;
     }
 
     .project-card p {
       color: #ddd;
-      margin-bottom: 1rem;
-    }
-
-    .project-card::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 40px;
-      background: linear-gradient(to top, #444, transparent);
-      pointer-events: none;
     }
 
     .view-more {
-      position: absolute;
-      bottom: 10px;
-      right: 15px;
-      background-color: #2c2a3a;
-      color: #c9a0dc;
-      padding: 10px 16px;
-      font-size: 0.9rem;
-      border: 1px solid #c9a0dc;
-      border-radius: 4px;
-      text-decoration: none;
-      z-index: 2;
       display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.2s ease, color 0.2s ease;
+      margin-top: 1rem;
+      padding: 0.4rem 0.8rem;
+      background-color: #c9a0dc;
+      color: #2c2a3a;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
     }
 
     .view-more:hover {
-      background-color: #c9a0dc;
-      color: #2c2a3a;
+      background-color: #e3ccf5;
     }
   </style>
 </head>
@@ -119,27 +107,26 @@
 
     <!-- Project 1 -->
     <div class="project-card">
-      <h3>🔵 Blue Team Home Lab</h3>
-      <p>This project outlines the setup of a personal cybersecurity lab using VirtualBox, Kali Linux, Splunk, Wireshark, and more. The lab is designed to simulate real-world environments for hands-on practice and learning.</p>
-      <a href="projects-home-lab.html" class="view-more">View More →</a>
+      <a href="projects-home-lab.html" class="title-link"><h3>🔵 Blue Team Home Lab</h3></a>
+      <p>This project outlines the setup of a personal cybersecurity lab using VirtualBox, Kali Linux, Splunk, Wireshark, and more.</p>
+      <a class="view-more" href="projects-home-lab.html">View More</a>
     </div>
 
     <!-- Project 2 -->
     <div class="project-card">
-      <h3>🐍 Python</h3>
-      <p>Hands-on projects using Python for scripting, automation, log parsing, and basic security tool development. Projects will include data parsing, regular expressions, and automating analysis.</p>
-      <a href="projects-python.html" class="view-more">View More →</a>
+      <a href="projects-python.html" class="title-link"><h3>🐍 Python</h3></a>
+      <p>Hands-on projects using Python for scripting, automation, log parsing, and basic security tool development. Content coming soon.</p>
+      <a class="view-more" href="projects-python.html">View More</a>
     </div>
 
     <!-- Project 3 -->
     <div class="project-card">
-      <h3>🦈 Wireshark</h3>
-      <p>These projects highlight how I use Wireshark to capture, filter, and analyze packet traffic. Focus is on common protocols, indicators of compromise, and threat hunting techniques across multiple exercises.</p>
-      <a href="projects-wireshark.html" class="view-more">View More →</a>
+      <a href="projects-wireshark.html" class="title-link"><h3>🦈 Wireshark</h3></a>
+      <p>These projects highlight how I use Wireshark to capture, filter, and analyze packet traffic. Focus is on common protocols, indicators of compromise, and threat hunting techniques.</p>
+      <a class="view-more" href="projects-wireshark.html">View More</a>
     </div>
 
   </div>
 
 </body>
 </html>
-
