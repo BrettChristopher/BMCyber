@@ -1,69 +1,69 @@
-/* General Styling */
+/* GENERAL LAYOUT */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: Calibri, sans-serif;
+    background-color: #333;
+    color: #fff;
+    display: flex;
 }
 
-/* Navigation */
-nav {
-    background: #222;
-    padding: 10px;
-}
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background-color: #2c2a3a;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 2rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid #c9a0dc;
 }
-nav ul li {
-    margin: 0 15px;
-}
-nav ul li a {
+
+.sidebar a {
     color: #fff;
     text-decoration: none;
+    margin: 1rem 0;
     font-weight: bold;
 }
-nav ul li a:hover {
-    color: #0af;
+
+.sidebar a:hover {
+    color: #c9a0dc;
+    text-decoration: underline;
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: #0a0a23;
-    color: white;
-}
-
-/* 🔵 LinkedIn Icon */
-.linkedin-btn {
-    margin-top: 15px;
-    text-align: center;
-}
-.linkedin-logo {
-    width: 45px;
-    height: 45px;
-    transition: transform 0.2s ease;
-}
-.linkedin-logo:hover {
-    transform: scale(1.1);
-}
-
-/* Content Section */
+/* MAIN CONTENT */
 .content {
-    text-align: center;
-    padding: 40px 20px;
-    background: white;
-    margin: 20px;
-    border-radius: 10px;
+    margin-left: 240px;
+    padding: 2rem;
+    max-width: 900px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
+.content h1 {
+    color: #c9a0dc;
+}
+
+/* LINKEDIN BUTTON */
+.linkedin-container {
+    margin: 15px 0 25px 0;
+}
+
+.linkedin-logo {
+    width: 32px;         /* perfect size for your layout */
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 5px;
+}
+
+.linkedin-logo:hover {
+    transform: scale(1.15);
+}
+
+/* IMAGES (general site rules) */
+img {
+    max-width: 100%;
+    border-radius: 8px;
 }
