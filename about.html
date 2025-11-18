@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About – BM Cyber</title>
+
   <style>
     body {
       margin: 0;
       font-family: Calibri, sans-serif;
       background-color: #333;
-      color: #ffffff;
+      color: #fff;
       display: flex;
     }
 
@@ -28,7 +29,7 @@
     }
 
     .sidebar a {
-      color: #ffffff;
+      color: #fff;
       text-decoration: none;
       margin: 1rem 0;
       font-weight: bold;
@@ -42,44 +43,40 @@
     .content {
       margin-left: 240px;
       padding: 2rem;
-      width: calc(100% - 240px);
+      max-width: 900px;
     }
 
     h2 {
-      color: #c9a0dc;
       margin-top: 0;
+      color: #c9a0dc;
     }
 
-    .section {
-      margin-bottom: 2rem;
+    .section-box {
       background-color: #444;
       padding: 1.5rem;
+      margin-bottom: 2rem;
       border-radius: 10px;
       border-left: 5px solid #c9a0dc;
-      width: 100%;
-      box-sizing: border-box;
     }
 
-    .section h3 {
-      margin-top: 0;
+    .section-box h3 {
       color: #c9a0dc;
+      margin-top: 0;
     }
 
     a {
       color: #c9a0dc;
-      text-decoration: none;
     }
-
     a:hover {
       color: #e3ccf5;
-      text-decoration: underline;
     }
 
     ul {
-      padding-left: 1.2rem;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
+
 <body>
 
   <div class="sidebar">
@@ -92,41 +89,41 @@
   <div class="content">
     <h2>About Me</h2>
 
-    <div class="section">
-      <h3>💼 Professional Background</h3>
-      <p><strong>Position:</strong> Senior Consultant at Deloitte</p>
-      <p><strong>Education:</strong> Pursuing Master's Degree in Cybersecurity at Georgia Institute of Technology</p>
-      <p><strong>Focus Areas:</strong> Blue Team, IAM, Python, Open Source</p>
+    <div class="section-box">
+      <h3>Professional Summary</h3>
+      <p>Senior Consultant at Deloitte working in cybersecurity and compliance. Currently pursuing a Master's Degree in Cybersecurity at Georgia Institute of Technology. Interested in Blue Team work, IAM, Python, and open-source tooling.</p>
     </div>
 
-    <div class="section">
-      <h3>📜 Certifications</h3>
+    <div class="section-box">
+      <h3>Experience</h3>
+      <p><strong>Deloitte</strong><br>
+      Senior Consultant (October 2022 – Present)</p>
+    </div>
+
+    <div class="section-box">
+      <h3>Skills</h3>
+      <p>Wireshark, Splunk, Security Onion, SQL, Tableau, Power BI, Visio, JIRA, SharePoint, Python, Bash, Git, Packet Analysis, SIEM Operations, Cloud Security Fundamentals</p>
+    </div>
+
+    <div class="section-box">
+      <h3>Certifications</h3>
       <ul>
         <li>
-          CompTIA Security+ – Certificate: 
-          <a href="https://www.certmetrics.com/comptia/candidate/cert_summary.aspx" target="_blank">Link</a>
+          CompTIA Security+ – Certificate:
+          <a href="https://www.certmetrics.com/comptia/candidate/cert_summary.aspx" target="_blank">
+            Link
+          </a>
         </li>
-        <li>CompTIA CySA+ – <em>In progress</em></li>
+        <li>Microsoft SC-900 – Microsoft Security, Compliance & Identity Fundamentals</li>
       </ul>
     </div>
 
-    <div class="section">
-      <h3>🧠 Skills</h3>
-      <ul>
-        <li><strong>Network & Traffic Analysis:</strong> Wireshark, TCPDump, Zeek</li>
-        <li><strong>SIEM & Monitoring:</strong> Splunk, Security Onion, ELK Stack</li>
-        <li><strong>Vulnerability Assessment:</strong> Nmap, OpenVAS</li>
-        <li><strong>Scripting & Automation:</strong> Python, Bash</li>
-        <li><strong>Virtualization & OS:</strong> VirtualBox, VMware, Kali Linux, Ubuntu, Windows 10/11</li>
-        <li><strong>Data & Visualization:</strong> SQL, Power BI, Tableau, Excel</li>
-        <li><strong>Collaboration Tools:</strong> JIRA, SharePoint, Microsoft Visio</li>
-        <li><strong>Security Frameworks:</strong> NIST CSF, NIST 800-53, RMF, MITRE ATT&CK</li>
-      </ul>
+    <div class="section-box">
+      <h3>Frameworks</h3>
+      <p>NIST CSF, NIST 800-53, RMF</p>
     </div>
+
   </div>
-
 </body>
 </html>
-
-
 
