@@ -1,92 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects – BM Cyber</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Calibri, sans-serif;
-      background-color: #333;
-      color: #ffffff;
-      display: flex;
-    }
-
-    .sidebar {
-      width: 220px;
-      background-color: #2c2a3a;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-right: 2px solid #c9a0dc;
-    }
-
-    .sidebar a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 1rem 0;
-      font-weight: bold;
-    }
-
-    .sidebar a:hover {
-      color: #c9a0dc;
-      text-decoration: underline;
-    }
-
-    .content {
-      margin-left: 240px;
-      padding: 2rem;
-      max-width: 1000px;
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #c9a0dc;
-    }
-
-    .project-card {
-      background-color: #444;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      border-left: 5px solid #c9a0dc;
-    }
-
-    .project-card h3 {
-      margin-top: 0;
-      color: #c9a0dc;
-    }
-
-    .project-card p {
-      color: #ddd;
-    }
-
-    .project-card a {
-      color: #c9a0dc;
-      text-decoration: none;
-    }
-
-    .project-card a:hover {
-      color: #e3ccf5;
-      text-decoration: underline;
-    }
-
-    img {
-      max-width: 100%;
-      border: 1px solid #888;
-      border-radius: 8px;
-      margin-top: 1rem;
+    body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
+    .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
+    .sidebar a{color:#fff;text-decoration:none;margin:1rem 0;font-weight:bold}
+    .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
+    .content{margin-left:240px;padding:2rem;max-width:900px}
+    h2{margin-top:0;color:#c9a0dc}
+    .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
+    .section-box h3{color:#c9a0dc;margin:0 0 1rem 0;font-size:1.5rem}
+    .section-box h4{color:#c9a0dc;margin:2rem 0 0.8rem 0;font-size:1.25rem}
+    ul{margin:0.8rem 0;padding-left:1.8rem;line-height:1.9}
+    li{margin-bottom:0.6rem}
+    @media(max-width:768px){
+      .sidebar{position:relative;width:100%;height:auto;flex-direction:row;padding:1rem;justify-content:space-around;border-right:none;border-bottom:2px solid #c9a0dc}
+      .content{margin-left:0;margin-top:1rem;padding:1rem}
     }
   </style>
 </head>
 <body>
-
   <div class="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -95,30 +31,49 @@
   </div>
 
   <div class="content">
-    <h2>📂 Projects</h2>
+    <h2>Projects</h2>
 
-    <!-- Project 1 -->
-    <div class="project-card">
-      <h3><a href="projects-home-lab.html">Home Lab</a></h3>
-      <p>This project outlines the setup of a personal cybersecurity lab using VirtualBox, Kali Linux, Splunk, Wireshark, and more.</p>
-      <p><a href="projects-home-lab.html">View More →</a></p>
-    </div>
+    <div class="section-box">
+      <h3>Blue Team Home Lab</h3>
+      
+      <h4>Hardware</h4>
+      <ul>
+        <li><strong>KAMRUI Essenx E1 Mini PC (Primary Lab Server)</strong><br>
+            Intel N97 Processor • 16 GB DDR4 RAM • 256 GB M.2 SSD • Dual 4K HDMI • Gigabit Ethernet • Wi-Fi 6 + Bluetooth 5.2</li>
+        <li><strong>Lenovo ThinkPad T480 (Management / Analysis Laptop)</strong><br>
+            Intel Core i5-8350U • 16 GB RAM • 256 GB SSD • Windows 10 Pro</li>
+      </ul>
 
-    <!-- Project 2 -->
-    <div class="project-card">
-      <h3><a href="projects-python.html">🐍 Python</a></h3>
-      <p>Hands-on projects using Python for scripting, automation, log parsing, and basic security tool development. Content coming soon.</p>
-      <p><a href="projects-python.html">View More →</a></p>
-    </div>
+      <h4>Tasks</h4>
+      <ul>
+        <li>Run Security Onion and Splunk instances</li>
+        <li>Full packet capture and network traffic analysis</li>
+        <li>Log ingestion from Windows, Linux, and network devices</li>
+        <li>Sigma & custom detection rule development</li>
+        <li>Threat hunting with real and emulated malware</li>
+        <li>Incident response playbooks and reporting</li>
+        <li>Vulnerability scanning and remediation testing</li>
+        <li>Daily blue-team study and tooling experiments</li>
+      </ul>
 
-    <!-- Project 3 -->
-    <div class="project-card">
-      <h3><a href="projects-wireshark.html">🦈 Wireshark</a></h3>
-      <p>These projects highlight how I use Wireshark to capture, filter, and analyze packet traffic. Focus is on common protocols, indicators of compromise, and threat hunting techniques.</p>
-      <p><a href="projects-wireshark.html">View More →</a></p>
+      <h4>Core Tools & Downloads</h4>
+      <ul>
+        <li>Security Onion – securityonion.net</li>
+        <li>Splunk Free – splunk.com</li>
+        <li>Wireshark – wireshark.org</li>
+        <li>Velociraptor / Elastic Agent</li>
+        <li>Sigma rules – github.com/SigmaHQ/sigma</li>
+        <li>Kali Linux VM (occasional offensive testing)</li>
+        <li>Atomic Red Team – redcanary.com/atomic-red-team</li>
+      </ul>
+
+      <h4>Network Hardware</h4>
+      <ul>
+        <li><strong>Netgear GS308</strong> – 8-Port Gigabit Unmanaged Switch<br>
+            Pure plug-and-play lab backbone</li>
+      </ul>
     </div>
 
   </div>
-
 </body>
 </html>
