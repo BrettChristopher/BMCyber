@@ -1,159 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blue Team Home Lab – BM Cyber</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Calibri, sans-serif;
-      background-color: #333;
-      color: #ffffff;
-      display: flex;
-    }
+<div class="section-box">
+  <h3 style="color:#c9a0dc; margin-bottom:0.5rem;">Home Lab</h3>
+  
+  <h4 style="color:#c9a0dc; margin:1.5rem 0 0.8rem 0;">Hardware</h4>
+  <ul>
+    <li><strong>KAMRUI Essenx E1 Mini PC (Primary Lab Server)</strong><br>
+        • Intel N97 Processor<br>
+        • 16 GB DDR4 RAM<br>
+        • 256 GB M.2 SSD<br>
+        • Dual 4K HDMI • Gigabit Ethernet • Wi-Fi 6 + BT 5.2</li>
+    <li><strong>Lenovo ThinkPad T480 (Management / Analysis Laptop)</strong><br>
+        • Intel Core i5-8350U<br>
+        • 16 GB RAM<br>
+        • 256 GB SSD<br>
+        • Windows 10 Pro</li>
+  </ul>
 
-    .sidebar {
-      width: 220px;
-      background-color: #2c2a3a;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-right: 2px solid #c9a0dc;
-    }
+  <h4 style="color:#c9a0dc; margin:1.5rem 0 0.8rem 0;">Tasks</h4>
+  <ul>
+    <li>Run Security Onion and Splunk instances</li>
+    <li>Full packet capture and network traffic analysis</li>
+    <li>Log ingestion from Windows, Linux, and network devices</li>
+    <li>Sigma & custom detection rule development</li>
+    <li>Threat hunting exercises with real and emulated malware</li>
+    <li>Incident response playbooks and reporting</li>
+    <li>Vulnerability scanning and remediation testing</li>
+    <li>Daily blue-team study and tooling experiments</li>
+  </ul>
 
-    .sidebar a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 1rem 0;
-      font-weight: bold;
-    }
+  <h4 style="color:#c9a0dc; margin:1.5rem 0 0.8rem 0;">Core Tools & Downloads</h4>
+  <ul>
+    <li>Security Onion – securityonion.net</li>
+    <li>Splunk Free – splunk.com</li>
+    <li>Wireshark – wireshark.org</li>
+    <li>Velociraptor / Elastic Agent</li>
+    <li>Sigma rules repo – github.com/SigmaHQ/sigma</li>
+    <li>Kali Linux (occasional offensive testing VM)</li>
+    <li>Atomic Red Team – redcanary.com/atomic-red-team</li>
+  </ul>
 
-    .sidebar a:hover {
-      color: #c9a0dc;
-      text-decoration: underline;
-    }
-
-    .content {
-      margin-left: 240px;
-      padding: 2rem;
-      width: calc(100% - 240px);
-    }
-
-    h2 {
-      color: #c9a0dc;
-      margin-top: 0;
-    }
-
-    .section {
-      background-color: #444;
-      padding: 1.5rem;
-      border-left: 5px solid #c9a0dc;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-    }
-
-    .section h3 {
-      margin-top: 0;
-      color: #c9a0dc;
-    }
-
-    .section ul {
-      margin: 0;
-      padding-left: 1.5rem;
-    }
-
-    .section li {
-      margin-bottom: 0.5rem;
-      color: #ddd;
-    }
-
-    .section p {
-      color: #ddd;
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      border: 1px solid #888;
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="sidebar">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="blog.html">Blog</a>
-    <a href="projects.html">Projects</a>
-  </div>
-
-  <div class="content">
-    <h2>🔵 Blue Team Home Lab</h2>
-
-    <div class="section">
-      <h3>Hardware</h3>
-      <ul>
-        <li>Lenovo ThinkPad T480</li>
-        <li>CPU: Intel Core i5-8250U (8th Gen)</li>
-        <li>RAM: 16GB DDR4</li>
-        <li>Storage: 512GB SSD</li>
-        <li>Display: 14” FHD (1920x1080)</li>
-        <li>OS: Windows 11 Pro</li>
-        <li>Ports: USB-C, USB 3.0, Ethernet, HDMI</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>Tasks</h3>
-      <ul>
-        <li>Run VirtualBox or VMware Workstation Player</li>
-        <li>Kali Linux (offensive tools)</li>
-        <li>Ubuntu (target or SIEM log source)</li>
-        <li>Windows 10 Eval (log source, client system)</li>
-        <li>Analyze logs in Splunk</li>
-        <li>Analyze network packets in Wireshark</li>
-        <li>Vulnerability scan results</li>
-        <li>SSH into the mini PC or other devices</li>
-        <li>Write incident reports, study, and manage your lab</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>Tool Downloads</h3>
-      <ul>
-        <li><strong>VirtualBox / VMware:</strong> Virtual Machines</li>
-        <li><strong>Kali Linux:</strong> <a href="https://www.kali.org" target="_blank" style="color:#c9a0dc;">kali.org</a></li>
-        <li><strong>Ubuntu:</strong> <a href="https://ubuntu.com" target="_blank" style="color:#c9a0dc;">ubuntu.com</a></li>
-        <li><strong>Windows 10 Eval:</strong> Microsoft Eval Center</li>
-        <li><strong>Wireshark:</strong> <a href="https://www.wireshark.org" target="_blank" style="color:#c9a0dc;">wireshark.org</a></li>
-        <li><strong>Nmap/Zenmap:</strong> <a href="https://nmap.org" target="_blank" style="color:#c9a0dc;">nmap.org</a></li>
-        <li><strong>Splunk Free:</strong> <a href="https://www.splunk.com" target="_blank" style="color:#c9a0dc;">splunk.com</a></li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>Network Hardware</h3>
-      <ul>
-        <li>Netgear GS308 – 8-Port Unmanaged Gigabit Switch</li>
-        <li>Type: Unmanaged</li>
-        <li>Use Case: Simple plug-and-play connectivity</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>Diagram</h3>
-      <img src="lab.png" alt="Blue Team Lab Diagram" />
-    </div>
-
-  </div>
-
-</body>
-</html>
+  <h4 style="color:#c9a0dc; margin:1.5rem 0 0.8rem 0;">Network Hardware</h4>
+  <ul>
+    <li><strong>Netgear GS308</strong> – 8-Port Gigabit Unmanaged Switch<br>
+        Pure plug-and-play lab backbone</li>
+  </ul>
+</div>
