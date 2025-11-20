@@ -1,46 +1,82 @@
-<div class="section-box">
-  <h3 style="color:#c9a0dc; margin-bottom:0.5rem;">Home Lab</h3>
-  
-  <h4 style="color:#c9a0dc; margin:1.5rem 0 0.8rem 0;">Hardware</h4>
-  <ul>
-    <li><strong>KAMRUI Essenx E1 Mini PC (Primary Lab Server)</strong><br>
-        • Intel N97 Processor<br>
-        • 16 GB DDR4 RAM<br>
-        • 256 GB M.2 SSD<br>
-        • Dual 4K HDMI • Gigabit Ethernet • Wi-Fi 6 + BT 5.2</li>
-    <li><strong>Lenovo ThinkPad T480 (Management / Analysis Laptop)</strong><br>
-        • Intel Core i5-8350U<br>
-        • 16 GB RAM<br>
-        • 256 GB SSD<br>
-        • Windows 10 Pro</li>
-  </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects – BM Cyber</title>
+  <style>
+    body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
+    .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
+    .sidebar a{color:#fff;text-decoration:none;margin:1rem 0;font-weight:bold}
+    .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
+    .content{margin-left:240px;padding:2rem;max-width:900px}
+    h2{margin-top:0;color:#c9a0dc}
+    .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
+    .section-box h3{color:#c9a0dc;margin:0 0 0.5rem 0}
+    .section-box h4{color:#c9a0dc;margin:1.8rem 0 0.8rem 0;font-size:1.2rem}
+    ul{line-height:1.8;padding-left:1.4rem;margin:0.8rem 0}
+    li{margin-bottom:0.8rem}
+    @media(max-width:768px){
+      .sidebar{position:relative;width:100%;height:auto;flex-direction:row;padding:1rem;justify-content:space-around;border-right:none;border-bottom:2px solid #c9a0dc}
+      .content{margin-left:0;margin-top:1rem;padding:1rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="projects.html">Projects</a>
+  </div>
 
-  <h4 style="color:#c9a0dc; margin:1.5rem 0 0.8rem 0;">Tasks</h4>
-  <ul>
-    <li>Run Security Onion and Splunk instances</li>
-    <li>Full packet capture and network traffic analysis</li>
-    <li>Log ingestion from Windows, Linux, and network devices</li>
-    <li>Sigma & custom detection rule development</li>
-    <li>Threat hunting exercises with real and emulated malware</li>
-    <li>Incident response playbooks and reporting</li>
-    <li>Vulnerability scanning and remediation testing</li>
-    <li>Daily blue-team study and tooling experiments</li>
-  </ul>
+  <div class="content">
+    <h2>Projects</h2>
 
-  <h4 style="color:#c9a0dc; margin:1.5rem 0 0.8rem 0;">Core Tools & Downloads</h4>
-  <ul>
-    <li>Security Onion – securityonion.net</li>
-    <li>Splunk Free – splunk.com</li>
-    <li>Wireshark – wireshark.org</li>
-    <li>Velociraptor / Elastic Agent</li>
-    <li>Sigma rules repo – github.com/SigmaHQ/sigma</li>
-    <li>Kali Linux (occasional offensive testing VM)</li>
-    <li>Atomic Red Team – redcanary.com/atomic-red-team</li>
-  </ul>
+    <div class="section-box">
+      <h3>Blue Team Home Lab</h3>
+      
+      <h4>Hardware</h4>
+      <ul>
+        <li><strong>KAMRUI Essenx E1 Mini PC (Primary Lab Server)</strong><br>
+            Intel N97 Processor • 16 GB DDR4 RAM • 256 GB M.2 SSD<br>
+            Dual 4K HDMI • Gigabit Ethernet • Wi-Fi 6 + Bluetooth 5.2</li>
+        <li><strong>Lenovo ThinkPad T480 (Management / Analysis Laptop)</strong><br>
+            Intel Core i5-8350U • 16 GB RAM • 256 GB SSD • Windows 10 Pro</li>
+      </ul>
 
-  <h4 style="color:#c9a0dc; margin:1.5rem 0 0.8rem 0;">Network Hardware</h4>
-  <ul>
-    <li><strong>Netgear GS308</strong> – 8-Port Gigabit Unmanaged Switch<br>
-        Pure plug-and-play lab backbone</li>
-  </ul>
-</div>
+      <h4>Tasks</h4>
+      <ul>
+        <li>Run Security Onion and Splunk instances</li>
+        <li>Full packet capture and network traffic analysis</li>
+        <li>Log ingestion from Windows, Linux, and network devices</li>
+        <li>Sigma & custom detection rule development</li>
+        <li>Threat hunting with real and emulated malware</li>
+        <li>Incident response playbooks and reporting</li>
+        <li>Vulnerability scanning and remediation testing</li>
+        <li>Daily blue-team study and tooling experiments</li>
+      </ul>
+
+      <h4>Core Tools & Downloads</h4>
+      <ul>
+        <li>Security Onion – securityonion.net</li>
+        <li>Splunk Free – splunk.com</li>
+        <li>Wireshark – wireshark.org</li>
+        <li>Velociraptor / Elastic Agent</li>
+        <li>Sigma rules – github.com/SigmaHQ/sigma</li>
+        <li>Kali Linux VM (occasional offensive testing)</li>
+        <li>Atomic Red Team – redcanary.com/atomic-red-team</li>
+      </ul>
+
+      <h4>Network Hardware</h4>
+      <ul>
+        <li><strong>Netgear GS308</strong> – 8-Port Gigabit Unmanaged Switch<br>
+            Pure plug-and-play lab backbone</li>
+      </ul>
+    </div>
+
+    <!-- Add more projects here in the future -->
+
+  </div>
+</body>
+</html>
