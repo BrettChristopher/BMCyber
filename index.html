@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BM Cyber – Home</title>
-
   <style>
     body {
       margin: 0;
@@ -13,7 +12,6 @@
       color: #fff;
       display: flex;
     }
-
     /* Sidebar */
     .sidebar {
       width: 220px;
@@ -28,31 +26,26 @@
       align-items: center;
       border-right: 2px solid #c9a0dc; /* Lavender */
     }
-
     .sidebar a {
       color: #fff;
       text-decoration: none;
       margin: 1rem 0;
       font-weight: bold;
     }
-
     .sidebar a:hover {
       color: #c9a0dc;
       text-decoration: underline;
     }
-
     /* Main content */
     .content {
       margin-left: 240px;
       padding: 2rem;
       max-width: 900px;
     }
-
     h2 {
       margin-top: 0;
       color: #c9a0dc;
     }
-
     /* Matching box style */
     .section-box {
       background-color: #444;
@@ -62,31 +55,33 @@
       border-left: 5px solid #c9a0dc;
     }
 
-    /* LinkedIn button */
-    .linkedin-btn {
-      display: inline-flex;
+    /* Social icons – LinkedIn + GitHub */
+    .social-links {
+      display: flex;
+      gap: 14px;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .social-btn {
+      display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 1rem;
+      width: 50px;
+      height: 50px;
       background-color: #444;
-      padding: 0.7rem 1.2rem;
-      border-radius: 8px;
       border: 2px solid #c9a0dc;
+      border-radius: 12px;
+      transition: all 0.25s ease;
       text-decoration: none;
-      color: #c9a0dc;
-      font-weight: bold;
-      transition: 0.2s;
     }
-
-    .linkedin-btn:hover {
+    .social-btn:hover {
       background-color: #555;
-      color: #e3ccf5;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
     }
-
-    .linkedin-btn img {
-      width: 22px;
-      height: 22px;
-      margin-right: 8px;
+    .social-btn img {
+      width: 30px;
+      height: 30px;
     }
 
     /* Mobile */
@@ -101,18 +96,18 @@
         border-right: none;
         border-bottom: 2px solid #c9a0dc;
       }
-
       .content {
         margin-left: 0;
         margin-top: 1rem;
         padding: 1rem;
       }
+      .social-links {
+        justify-content: center;
+      }
     }
   </style>
 </head>
-
 <body>
-
   <!-- Sidebar -->
   <div class="sidebar">
     <a href="index.html">Home</a>
@@ -123,20 +118,20 @@
 
   <!-- Main Content -->
   <div class="content">
-
     <h2>Welcome to BM Cyber</h2>
-
     <div class="section-box">
       <p>Welcome to my cybersecurity portfolio. This site showcases my work in Blue Team operations, network defense, Wireshark analysis, and hands-on cybersecurity projects.</p>
 
-      <!-- LinkedIn Button -->
-      <a class="linkedin-btn" href="https://www.linkedin.com/in/brett-mejasic-2aa867a8/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo">
-        Connect on LinkedIn
-      </a>
+      <!-- Social Icons (LinkedIn + GitHub) -->
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/brett-mejasic-2aa867a8/" target="_blank" title="LinkedIn Profile" class="social-btn">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/BrettChristopher" target="_blank" title="GitHub Profile" class="social-btn">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+        </a>
+      </div>
     </div>
-
   </div>
-
 </body>
 </html>
