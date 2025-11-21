@@ -6,7 +6,7 @@
   <title>Blog – BM Cyber</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <style>
-    /* my usual dark theme + sidebar */
+    /* keeping my dark theme + sidebar consistent */
     body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
     .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
     .sidebar a{color:#fff;text-decoration:none;margin:1rem 0;font-weight:bold}
@@ -14,13 +14,11 @@
     .content{margin-left:240px;padding:2rem;max-width:900px}
     h2{margin-top:0;color:#c9a0dc}
     h3{color:#c9a0dc}
-    
-    /* boxes with the hover lift i like on projects/about */
+    /* same box style with the hover lift I added to projects/about */
     .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc;line-height:1.7;
                  transition:all .35s ease}
     .section-box:hover{transform:translateY(-8px);box-shadow:0 12px 25px rgba(201,160,220,.25);border-left-color:#e3ccf5}
-
-    /* mobile – top bar instead of side bar, same as every other page */
+    /* mobile fix – top bar like every other page, no overlap */
     @media (max-width: 768px) {
       .sidebar{position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
       .content{margin-left:0!important;margin-top:75px;padding:1.5rem}
@@ -41,13 +39,11 @@
     <h2>Blog</h2>
 
     <div class="section-box">
-      <h3>Coming Soon…</h3>
-      <p>still deciding what to write first — probably a deep dive on the Sigma rules i use every day, or the Keycloak lab i just finished, or maybe a “how i actually caught that one weird alert at 2 a.m.” story.</p>
-      <p>either way, it’ll be here soon.</p>
+      <h3>Georgia Institute of Technology</h3>
+      <p>This section contains posts and reflections from my cybersecurity graduate program at Georgia Tech. I’ll share notes, course reviews, hands-on projects, and relevant insights as I progress through the degree.</p>
     </div>
 
-    <!-- next post goes in another .section-box whenever i’m ready -->
-
+    <!-- more posts go in new .section-box blocks when I write them -->
   </div>
 </body>
 </html>
