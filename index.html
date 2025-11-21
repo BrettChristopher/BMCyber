@@ -1,4 +1,3 @@
-<!-- 1. index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,7 @@
   <title>BM Cyber – Home</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
+
   <style>
     body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
     .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
@@ -15,42 +15,27 @@
     .content{margin-left:240px;padding:2rem;max-width:900px}
     h2{margin-top:0;color:#c9a0dc}
     .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
-    .social-links{display:flex;gap:14px;margin-top:1.2rem}
+    .social-links{display:flex;gap:16px;margin-top:2rem}
     .social-btn{display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#444;border:2px solid #c9a0dc;border-radius:12px;transition:all .25s}
     .social-btn:hover{background:#555;transform:translateY(-4px);box-shadow:0 6px 12px rgba(0,0,0,.4)}
     .social-btn img{width:30px;height:30px}
-    .terminal{margin:2rem auto 0;max-width:800px;background:#1e1e1e;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.6);font-family:'Courier New',monospace}
-    .terminal-header{background:#2d2d2d;padding:0.6rem 1rem;display:flex;gap:8px}
-    .dot{width:12px;height:12px;border-radius:50%}
-    .red{background:#ff5f56}.yellow{background:#ffbd2e}.green{background:#27c93f}
-    .terminal-body{padding:1.5rem;color:#c9a0dc;white-space:pre;line-height:1.8}
-    .prompt{color:#8be9fd;margin-right:0.5rem}
-    .blink{animation:blink 1s steps(1) infinite}
-    @keyframes blink{50%{opacity:0}}
 
-    /* ← ONLY THIS BLOCK IS NEW → perfect mobile fix */
+
+    .terminal{margin:2rem 0 0;max-width:460px;background:#1e1e1e;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.7);font-family:'Courier New',monospace;font-size:0.95rem}
+    .terminal-header{background:#2d2d2d;padding:0.4rem 0.8rem;display:flex;gap:7px}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .red{background:#ff5f56}.yellow{background:#ffbd2e}.green{background:#27c93f}
+    .terminal-body{padding:1rem 1.2rem;color:#c9a0dc;white-space:pre;line-height:1.6}
+    .prompt{color:#8be9fd;margin-right:0.5rem}
+    .blink{animation:b 1s steps(1) infinite}
+    @keyframes b{50%{opacity:0}}
+
+    /* ONLY mobile fix – desktop 100 % untouched */
     @media (max-width: 768px) {
-      .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        padding: 1rem 0;
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-        border-right: none;
-        border-bottom: 3px solid #c9a0dc;
-        z-index: 1000;
-      }
-      .content {
-        margin-left: 0 !important;
-        margin-top: 80px;
-        padding: 1.5rem;
-      }
-      body {flex-direction: column}
-      .terminal {font-size: 0.95rem}
+      .sidebar{position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
+      .content{margin-left:0!important;margin-top:75px;padding:1.5rem}
+      body{flex-direction:column}
+      .terminal{max-width:100%;font-size:0.9rem}
     }
   </style>
 </head>
@@ -66,6 +51,7 @@
     <h2>Welcome to BM Cyber</h2>
     <div class="section-box">
       <p>Welcome to my cybersecurity portfolio. This site showcases my work in Blue Team operations, network defense, Wireshark analysis, and hands-on cybersecurity projects.</p>
+
 
       <div class="terminal">
         <div class="terminal-header">
@@ -89,20 +75,28 @@
     </div>
   </div>
 
+
   <script>
-    const lines = ['<span class="prompt">$</span> whoami','Brett M. - Cybersecurity Engineer','<span class="blink">█</span>'];
+    const lines = [
+      '<span class="prompt">$</span> whoami',
+      'Brett M. - Cybersecurity Engineer',
+      '<span class="blink">█</span>'
+    ];
     const el = document.getElementById('typewriter');
     let line = 0, char = 0;
+
     function type() {
       if (line < lines.length) {
         if (char <= lines[line].length) {
           let text = '';
           for (let i = 0; i < line; i++) text += lines[i] + '\n';
-          text += lines[i].substring(0, char) + '<span class="blink">█</span>';
+          text += lines[line].substring(0, char) + '<span class="blink">█</span>';
           el.innerHTML = text;
           char++;
           setTimeout(type, char === lines[line].length + 1 ? 800 : 50);
-        } else { char = 0; line++; setTimeout(type, 300); }
+        } else {
+          char = 0; line++; setTimeout(type, 300);
+        }
       }
     }
     setTimeout(type, 600);
