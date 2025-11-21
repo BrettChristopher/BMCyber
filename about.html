@@ -5,23 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About – BM Cyber</title>
   <link rel="icon" href="favicon.png" type="image/png">
+
+  <!-- Google tag (gtag.js) – invisible analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSDM7W494R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QSDM7W494R');
+  </script>
+
   <style>
     body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
-    .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
+    .sidebar{width:220px;background:#2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
     .sidebar a{color:#fff;text-decoration:none;margin:1rem 0;font-weight:bold}
     .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
     .content{margin-left:240px;padding:2rem;max-width:900px}
     h2{margin-top:0;color:#c9a0dc}
     h3{color:#c9a0dc}
     .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc;line-height:1.7;
-                 transition:all .35s ease}   /* ← added */
-    .section-box:hover{transform:translateY(-8px);box-shadow:0 12px 25px rgba(201,160,220,.25);border-left-color:#e3ccf5}   /* ← added */
-
+                 transition:all .35s ease}
+    .section-box:hover{transform:translateY(-8px);box-shadow:0 12px 25px rgba(201,160,220,.25);border-left-color:#e3ccf5}
     @media (max-width: 768px) {
       .sidebar{position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
       .content{margin-left:0!important;margin-top:75px;padding:1.5rem}
       body{flex-direction:column}
-      .section-box:hover{transform:translateY(-4px)}   /* smaller lift on mobile */
+      .section-box:hover{transform:translateY(-4px)}
     }
   </style>
 </head>
@@ -32,26 +41,21 @@
     <a href="blog.html">Blog</a>
     <a href="projects.html">Projects</a>
   </div>
-
   <div class="content">
     <h2>About</h2>
-
     <div class="section-box">
       <h3>Professional Summary</h3>
       <p>Cybersecurity Engineer with hands-on Blue Team experience in detection engineering, identity & access management, SIEM operations, packet analysis, and compliance frameworks.</p>
     </div>
-
     <div class="section-box">
       <h3>Experience</h3>
       <p><strong>Deloitte</strong><br>
       Senior Consultant (October 2022 – Present)</p>
     </div>
-
     <div class="section-box">
       <h3>Skills</h3>
       <p>Wireshark, Splunk, Security Onion, SQL, Tableau, Power BI, Visio, JIRA, SharePoint, Python, Java Scripting, SAML/OIDC, LDAP, PingFederate, & PingDirectory</p>
     </div>
-
     <div class="section-box">
       <h3>Certifications</h3>
       <ul>
@@ -61,7 +65,6 @@
         <li>Microsoft SC-900 – Microsoft Security, Compliance & Identity Fundamentals</li>
       </ul>
     </div>
-
     <div class="section-box">
       <h3>Frameworks</h3>
       <p>NIST CSF, NIST 800-53, RMF</p>
