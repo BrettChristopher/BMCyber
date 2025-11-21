@@ -15,13 +15,11 @@
     .content{margin-left:240px;padding:2rem;max-width:900px}
     h2{margin-top:0;color:#c9a0dc}
     .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
-    .social-links{display:flex;gap:16px;margin-top:2rem}                     /* ← left-aligned */
+    .social-links{display:flex;gap:16px;margin-top:2rem}
     .social-btn{display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#444;border:2px solid #c9a0dc;border-radius:12px;transition:all .25s}
     .social-btn:hover{background:#555;transform:translateY(-4px);box-shadow:0 6px 12px rgba(0,0,0,.4)}
     .social-btn img{width:30px;height:30px}
-
-    /* Tiny terminal – left-aligned, compact */
-    .terminal{margin:2rem 0 0 0;max-width:460px;background:#1e1e1e;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.7);font-family:'Courier New',monospace;font-size:0.95rem}
+    .terminal{margin:2rem 0 0;max-width:460px;background:#1e1e1e;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.7);font-family:'Courier New',monospace;font-size:0.95rem}
     .terminal-header{background:#2d2d2d;padding:0.4rem 0.8rem;display:flex;gap:7px}
     .dot{width:10px;height:10px;border-radius:50%}
     .red{background:#ff5f56}.yellow{background:#ffbd2e}.green{background:#27c93f}
@@ -29,22 +27,13 @@
     .prompt{color:#8be9fd;margin-right:0.5rem}
     .blink{animation:b 1s steps(1) infinite}
     @keyframes b{50%{opacity:0}}
+    .skills img{margin:0.4rem 0.6rem 0.4rem 0;vertical-align:middle}
     @media(max-width:768px){
       .sidebar{position:relative;width:100%;height:auto;flex-direction:row;padding:1rem;justify-content:space-around;border-right:none;border-bottom:2px solid #c9a0dc}
       .content{margin-left:0;margin-top:1rem;padding:1rem}
       .terminal{max-width:100%;font-size:0.9rem}
-      .social-links{justify-content:flex-start}
+      .skills img{margin:0.3rem}
     }
-
-    <div class="skills" style="margin:2rem 0;text-align:left;">
-  <img src="https://img.shields.io/badge/Splunk-Power_User-000000?logo=splunk&logoColor=green" alt="Splunk">
-  <img src="https://img.shields.io/badge/Security_Onion-Expert-000000?logoColor=orange" alt="Security Onion">
-  <img src="https://img.shields.io/badge/Wireshark-Pro-000000?logo=wireshark&logoColor=blue" alt="Wireshark">
-  <img src="https://img.shields.io/badge/Keycloak-IAM-000000?logo=keycloak&logoColor=green" alt="Keycloak">
-  <img src="https://img.shields.io/badge/PingFederate-Advanced-000000?logoColor=purple" alt="PingFederate">
-  <img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Sigma-Rules-000000?logoColor=yellow" alt="Sigma">
-</div>
   </style>
 </head>
 <body>
@@ -60,7 +49,7 @@
     <div class="section-box">
       <p>Welcome to my cybersecurity portfolio. This site showcases my work in Blue Team operations, network defense, Wireshark analysis, and hands-on cybersecurity projects.</p>
 
-      <!-- Tiny left-aligned terminal -->
+      <!-- Terminal -->
       <div class="terminal">
         <div class="terminal-header">
           <span class="dot red"></span>
@@ -72,7 +61,18 @@
         </div>
       </div>
 
-      <!-- Social icons – left-aligned again -->
+      <!-- Skill Badges – now in the right place -->
+      <div class="skills" style="margin:2rem 0 1rem 0;">
+        <img src="https://img.shields.io/badge/Splunk-Power_User-000000?logo=splunk&logoColor=green" alt="Splunk">
+        <img src="https://img.shields.io/badge/Security_Onion-Expert-000000?logoColor=orange" alt="Security Onion">
+        <img src="https://img.shields.io/badge/Wireshark-Pro-000000?logo=wireshark&logoColor=blue" alt="Wireshark">
+        <img src="https://img.shields.io/badge/Keycloak-IAM-000000?logo=keycloak&logoColor=green" alt="Keycloak">
+        <img src="https://img.shields.io/badge/PingFederate-Advanced-000000?logoColor=purple" alt="PingFederate">
+        <img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/Sigma-Rules-000000?logoColor=yellow" alt="Sigma">
+      </div>
+
+      <!-- Social Icons -->
       <div class="social-links">
         <a href="https://www.linkedin.com/in/brett-mejasic-2aa867a8/" target="_blank" class="social-btn">
           <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
@@ -92,7 +92,6 @@
     ];
     const el = document.getElementById('typewriter');
     let line = 0, char = 0;
-
     function type() {
       if (line < lines.length) {
         if (char <= lines[line].length) {
