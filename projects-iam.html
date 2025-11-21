@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IAM Projects – BM Cyber</title>
+  <style>
+    body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
+    .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
+    .sidebar a{color:#fff;text-decoration:none;margin:1rem 0;font-weight:bold}
+    .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
+    .content{margin-left:240px;padding:2rem;max-width:1000px}
+    h2,h3{color:#c9a0dc}
+    .project-card{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
+    .project-card h3{margin:0 0 0.8rem 0}
+    .project-card p{color:#ddd;margin:0.5rem 0}
+    a{color:#c9a0dc;text-decoration:none}
+    a:hover{color:#e3ccf5;text-decoration:underline}
+    @media(max-width:768px){
+      .sidebar{position:relative;width:100%;height:auto;flex-direction:row;padding:1rem;justify-content:space-around;border-right:none;border-bottom:2px solid #c9a0dc}
+      .content{margin-left:0;margin-top:1rem;padding:1rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="projects.html">Projects</a>
+  </div>
+
+  <div class="content">
+    <h2>Identity & Access Management (IAM) Projects</h2>
+    <p>Real-world deployments, configurations, and deep dives into enterprise identity platforms.</p>
+
+    <!-- Keycloak Project (first and only for now) -->
+    <div class="project-card">
+      <h3><a href="projects-iam-keycloak.html">Keycloak – Identity Broker & SSO Lab</a></h3>
+      <p>Full Keycloak deployment with OIDC/SAML, identity brokering (Google, Azure AD), social login, LDAP federation, WebAuthn MFA, custom themes, and Nginx + TLS.</p>
+      <p><strong>Status:</strong> Active lab • Docker + PostgreSQL • Ongoing</p>
+      <p><a href="projects-iam-keycloak.html">View Full Write-up →</a></p>
+    </div>
+
+    <!-- Future IAM projects go here -->
+    <!--
+    <div class="project-card">
+      <h3><a href="projects-iam-ping.html">PingFederate & PingDirectory</a></h3>
+      <p>...</p>
+    </div>
+    -->
+
+    <p><em>More IAM projects coming soon (PingFederate, Azure AD Conditional Access, SCIM, etc.)</em></p>
+  </div>
+</body>
+</html>
