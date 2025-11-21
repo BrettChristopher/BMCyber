@@ -1,4 +1,4 @@
-<!-- 2. about.html –-->
+<!-- 2. about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,19 @@
   <title>About – BM Cyber</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <style>
-    
+    body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
+    .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
+    .sidebar a{color:#fff;text-decoration:none;margin:1rem 0;font-weight:bold}
+    .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
+    .content{margin-left:240px;padding:2rem;max-width:900px}
+    h2{margin-top:0;color:#c9a0dc}
+    .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
+
+    @media (max-width: 768px) {
+      .sidebar {position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
+      .content {margin-left:0 !important;margin-top:80px;padding:1.5rem}
+      body {flex-direction:column}
+    }
   </style>
 </head>
 <body>
@@ -20,7 +32,6 @@
   <div class="content">
     <h2>About</h2>
     <div class="section-box">
-   
       <p>Blue Team defender with experience in detection engineering, IAM, Splunk, Security Onion, Wireshark, and building real-world labs.</p>
       <p>Currently focused on threat hunting, Sigma rule development, identity platforms (Keycloak, PingFederate), and security tools.</p>
     </div>
