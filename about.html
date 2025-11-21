@@ -1,4 +1,3 @@
-<!-- 2. about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +12,15 @@
     .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
     .content{margin-left:240px;padding:2rem;max-width:900px}
     h2{margin-top:0;color:#c9a0dc}
-    .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
+    h3{color:#c9a0dc}
+    .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc;line-height:1.7}
+    ul{line-height:1.8}
 
+    /* Only mobile fix – desktop completely untouched */
     @media (max-width: 768px) {
-      .sidebar {position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
-      .content {margin-left:0 !important;margin-top:80px;padding:1.5rem}
-      body {flex-direction:column}
+      .sidebar{position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
+      .content{margin-left:0!important;margin-top:75px;padding:1.5rem}
+      body{flex-direction:column}
     }
   </style>
 </head>
@@ -29,11 +31,39 @@
     <a href="blog.html">Blog</a>
     <a href="projects.html">Projects</a>
   </div>
+
   <div class="content">
     <h2>About</h2>
+
     <div class="section-box">
-      <p>Blue Team defender with experience in detection engineering, IAM, Splunk, Security Onion, Wireshark, and building real-world labs.</p>
-      <p>Currently focused on threat hunting, Sigma rule development, identity platforms (Keycloak, PingFederate), and security tools.</p>
+      <h3>Professional Summary</h3>
+      <p>Cybersecurity Engineer with hands-on Blue Team experience in detection engineering, identity & access management, SIEM operations, packet analysis, and compliance frameworks.</p>
+    </div>
+
+    <div class="section-box">
+      <h3>Experience</h3>
+      <p><strong>Deloitte</strong><br>
+      Senior Consultant (October 2022 – Present)</p>
+    </div>
+
+    <div class="section-box">
+      <h3>Skills</h3>
+      <p>Wireshark, Splunk, Security Onion, SQL, Tableau, Power BI, Visio, JIRA, SharePoint, Python, Java Scripting, SAML/OIDC, LDAP, PingFederate, & PingDirectory</p>
+    </div>
+
+    <div class="section-box">
+      <h3>Certifications</h3>
+      <ul>
+        <li>CompTIA Security+ – Certificate:
+          <a href="https://www.certmetrics.com/comptia/candidate/cert_summary.aspx" target="_blank">Link</a>
+        </li>
+        <li>Microsoft SC-900 – Microsoft Security, Compliance & Identity Fundamentals</li>
+      </ul>
+    </div>
+
+    <div class="section-box">
+      <h3>Frameworks</h3>
+      <p>NIST CSF, NIST 800-53, RMF</p>
     </div>
   </div>
 </body>
