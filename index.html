@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BM Cyber – Home</title>
-
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
 
@@ -16,24 +15,24 @@
     .content{margin-left:240px;padding:2rem;max-width:900px}
     h2{margin-top:0;color:#c9a0dc}
     .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
-    .social-links{display:flex;gap:14px;margin-top:1.2rem;flex-wrap:wrap}
-    .social-btn{display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#444;border:2px solid #c9a0dc;border-radius:12px;transition:all .25s}
+    .social-links{display:flex;gap:14px;margin-top:2rem;justify-content:center;flex-wrap:wrap}
+    .social-btn{display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:#444;border:2px solid #c9a0dc;border-radius:12px;transition:all .25s}
     .social-btn:hover{background:#555;transform:translateY(-4px);box-shadow:0 6px 12px rgba(0,0,0,.4)}
-    .social-btn img{width:30px;height:30px}
+    .social-btn img{width:28px;height:28px}
 
-    .terminal{margin-top:2rem;max-width:800px;background:#1e1e1e;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.6);font-family:'Courier New',monospace}
-    .terminal-header{background:#2d2d2d;padding:0.6rem 1rem;display:flex;gap:8px}
-    .dot{width:12px;height:12px;border-radius:50%}
+    /* Tiny terminal – only 3 lines, much smaller */
+    .terminal{margin:2rem auto 0;max-width:460px;background:#1e1e1e;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.7);font-family:'Courier New',monospace;font-size:0.95rem}
+    .terminal-header{background:#2d2d2d;padding:0.4rem 0.8rem;display:flex;gap:7px}
+    .dot{width:10px;height:10px;border-radius:50%}
     .red{background:#ff5f56}.yellow{background:#ffbd2e}.green{background:#27c93f}
-    .terminal-body{padding:1.5rem;color:#c9a0dc;white-space:pre;line-height:1.8}
+    .terminal-body{padding:1rem 1.2rem;color:#c9a0dc;white-space:pre;line-height:1.6}
     .prompt{color:#8be9fd;margin-right:0.5rem}
-    .blink{animation:blink 1s steps(1) infinite}
-    @keyframes blink{50%{opacity:0}}
+    .blink{animation:b 1s steps(1) infinite}
+    @keyframes b{50%{opacity:0}}
     @media(max-width:768px){
       .sidebar{position:relative;width:100%;height:auto;flex-direction:row;padding:1rem;justify-content:space-around;border-right:none;border-bottom:2px solid #c9a0dc}
       .content{margin-left:0;margin-top:1rem;padding:1rem}
-      .terminal{margin:1.5rem 0}
-      .social-links{justify-content:center}
+      .terminal{max-width:100%;font-size:0.9rem}
     }
   </style>
 </head>
@@ -50,7 +49,7 @@
     <div class="section-box">
       <p>Welcome to my cybersecurity portfolio. This site showcases my work in Blue Team operations, network defense, Wireshark analysis, and hands-on cybersecurity projects.</p>
 
-      <!-- Terminal Intro – fixed & tested -->
+      <!-- Tiny, clean terminal -->
       <div class="terminal">
         <div class="terminal-header">
           <span class="dot red"></span>
@@ -63,10 +62,10 @@
       </div>
 
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/brett-mejasic-2aa867a8/" target="_blank" title="LinkedIn" class="social-btn">
+        <a href="https://www.linkedin.com/in/brett-mejasic-2aa867a8/" target="_blank" class="social-btn">
           <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
         </a>
-        <a href="https://github.com/BrettChristopher" target="_blank" title="GitHub" class="social-btn">
+        <a href="https://github.com/BrettChristopher" target="_blank" class="social-btn">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
         </a>
       </div>
@@ -77,28 +76,26 @@
     const lines = [
       '<span class="prompt">$</span> whoami',
       'Brett M. - Cybersecurity Engineer',
-      '',
-      '<span class="prompt">$</span> neofetch --off',
       '<span class="blink">█</span>'
     ];
+    const el = document.getElementById('typewriter');
+    let line = 0, char = 0;
 
-    const typewriter = document.getElementById('typewriter');
-    let i = 0, lineIndex = 0, delay = 800;
-
-    function typeLine() {
-      if (lineIndex < lines.length) {
-        if (i <= lines[lineIndex].length) {
-          typewriter.innerHTML = lines.slice(0, lineIndex).join('\n') + '\n' + lines[lineIndex].substring(0, i) + '<span class="blink">█</span>';
-          i++;
-          setTimeout(typeLine, i === lines[lineIndex].length + 1 ? 600 : 50);
+    function type() {
+      if (line < lines.length) {
+        if (char <= lines[line].length) {
+          let textSoFar = '';
+          for (let i = 0; i < line; i++) textSoFar += lines[i] + '\n';
+          textSoFar += lines[line].substring(0, char) + '<span class="blink">█</span>';
+          el.innerHTML = textSoFar;
+          char++;
+          setTimeout(type, char === lines[line].length + 1 ? 800 : 50);
         } else {
-          i = 0;
-          lineIndex++;
-          setTimeout(typeLine, 300);
+          char = 0; line++; setTimeout(type, 300);
         }
       }
     }
-    setTimeout(typeLine, delay);
+    setTimeout(type, 600);
   </script>
 </body>
 </html>
