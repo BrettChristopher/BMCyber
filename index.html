@@ -7,6 +7,15 @@
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSDM7W494R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QSDM7W494R');
+  </script>
+
   <style>
     body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
     .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
@@ -15,12 +24,10 @@
     .content{margin-left:240px;padding:2rem;max-width:900px}
     h2{margin-top:0;color:#c9a0dc}
     .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
-    .social-links{display:flex;gap:16px;margin-top:2rem}
+    .social-links{display:flex;gap:16px;margin-top:2rem;justify-content:center}
     .social-btn{display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#444;border:2px solid #c9a0dc;border-radius:12px;transition:all .25s}
     .social-btn:hover{background:#555;transform:translateY(-4px);box-shadow:0 6px 12px rgba(0,0,0,.4)}
     .social-btn img{width:30px;height:30px}
-
-    /* Your exact tiny terminal – unchanged */
     .terminal{margin:2rem 0 0;max-width:460px;background:#1e1e1e;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.7);font-family:'Courier New',monospace;font-size:0.95rem}
     .terminal-header{background:#2d2d2d;padding:0.4rem 0.8rem;display:flex;gap:7px}
     .dot{width:10px;height:10px;border-radius:50%}
@@ -30,12 +37,16 @@
     .blink{animation:b 1s steps(1) infinite}
     @keyframes b{50%{opacity:0}}
 
-    /* ONLY mobile fix – desktop 100 % untouched */
+    /* TryHackMe badge – perfectly centered between terminal and social buttons */
+    .thm-badge{margin:2rem 0;text-align:center}
+    .thm-badge img{border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.5)}
+
     @media (max-width: 768px) {
       .sidebar{position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
       .content{margin-left:0!important;margin-top:75px;padding:1.5rem}
       body{flex-direction:column}
       .terminal{max-width:100%;font-size:0.9rem}
+      .thm-badge{margin:1.5rem 0}
     }
   </style>
 </head>
@@ -50,9 +61,8 @@
   <div class="content">
     <h2>Welcome to BM Cyber</h2>
     <div class="section-box">
-      <p>Welcome to my cybersecurity portfolio. This site showcases my work in Blue Team operations, network defense, Wireshark analysis, and hands-on cybersecurity projects.</p>
+      <p>Welcome to my cybersecurity portfolio. This site showcases my work in Blue Team operations, IAM tasks, Wireshark analysis, and hands-on cybersecurity projects.</p>
 
-      <!-- Your full terminal with typing effect – back exactly as you had it -->
       <div class="terminal">
         <div class="terminal-header">
           <span class="dot red"></span>
@@ -62,6 +72,13 @@
         <div class="terminal-body">
           <pre id="typewriter"><span class="blink">█</span></pre>
         </div>
+      </div>
+
+      <!-- TryHackMe badge – centered between terminal and social icons -->
+      <div class="thm-badge">
+        <a href="https://tryhackme.com/p/Bmej" target="_blank">
+          <img src="https://tryhackme-badges.s3.amazonaws.com/Bmej.png" alt="TryHackMe Badge" width="180">
+        </a>
       </div>
 
       <div class="social-links">
@@ -75,16 +92,11 @@
     </div>
   </div>
 
-  <!-- Your exact typing script – unchanged and working perfectly -->
   <script>
-    const lines = [
-      '<span class="prompt">$</span> whoami',
-      'Brett M. - Cybersecurity Engineer',
-      '<span class="blink">█</span>'
-    ];
+    const lines = ['<span class="prompt">$</span> whoami','Brett M. - Cybersecurity Engineer','<span class="blink">█</span>'];
     const el = document.getElementById('typewriter');
+    el.innerHTML = '<span class="blink">█</span>';  // clear any leftover text
     let line = 0, char = 0;
-
     function type() {
       if (line < lines.length) {
         if (char <= lines[line].length) {
@@ -94,9 +106,7 @@
           el.innerHTML = text;
           char++;
           setTimeout(type, char === lines[line].length + 1 ? 800 : 50);
-        } else {
-          char = 0; line++; setTimeout(type, 300);
-        }
+        } else { char = 0; line++; setTimeout(type, 300); }
       }
     }
     setTimeout(type, 600);
