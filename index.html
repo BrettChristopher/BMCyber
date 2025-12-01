@@ -7,7 +7,7 @@
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSDM7W494R"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,12 +23,11 @@
     .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
     .content{margin-left:240px;padding:2rem;max-width:900px}
     h2{margin-top:0;color:#c9a0dc}
-    .section-box{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
-    .social-links{display:flex;gap:16px;margin-top:2rem;justify-content:center}
-    .social-btn{display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#444;border:2px solid #c9a0dc;border-radius:12px;transition:all .25s}
-    .social-btn:hover{background:#555;transform:translateY(-4px);box-shadow:0 6px 12px rgba(0,0,0,.4)}
-    .social-btn img{width:30px;height:30px}
-    .terminal{margin:2rem 0 0;max-width:460px;background:#1e1e1e;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.7);font-family:'Courier New',monospace;font-size:0.95rem}
+    .section-box{background:#444;padding:1.5rem;border-radius:10px;border-left:5px solid #c9a0dc}
+
+    /* Perfect balanced spacing between terminal → badge → social icons */
+    .section-box > * + * {margin-top:1.8rem}
+    .terminal{max-width:460px;background:#1e1e1e;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.7);font-family:'Courier New',monospace;font-size:0.95rem}
     .terminal-header{background:#2d2d2d;padding:0.4rem 0.8rem;display:flex;gap:7px}
     .dot{width:10px;height:10px;border-radius:50%}
     .red{background:#ff5f56}.yellow{background:#ffbd2e}.green{background:#27c93f}
@@ -37,16 +36,22 @@
     .blink{animation:b 1s steps(1) infinite}
     @keyframes b{50%{opacity:0}}
 
-    /* TryHackMe badge – perfectly centered between terminal and social buttons */
-    .thm-badge{margin:2rem 0;text-align:center}
-    .thm-badge img{border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.5)}
+    /* TryHackMe badge – perfect size and styling */
+    .thm-badge{text-align:center}
+    .thm-badge img{width:240px;height:auto;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.5)}
 
-    @media (max-width: 768px) {
+    .social-links{display:flex;gap:16px;justify-content:center}
+    .social-btn{display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#444;border:2px solid #c9a0dc;border-radius:12px;transition:all .25s}
+    .social-btn:hover{background:#555;transform:translateY(-4px);box-shadow:0 6px 12px rgba(0,0,0,.4)}
+    .social-btn img{width:30px;height:30px}
+
+    @media (max-width:768px){
       .sidebar{position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
       .content{margin-left:0!important;margin-top:75px;padding:1.5rem}
       body{flex-direction:column}
       .terminal{max-width:100%;font-size:0.9rem}
-      .thm-badge{margin:1.5rem 0}
+      .thm-badge img{width:220px}
+      .section-box > * + * {margin-top:1.5rem}
     }
   </style>
 </head>
@@ -74,10 +79,9 @@
         </div>
       </div>
 
-      <!-- TryHackMe badge – centered between terminal and social icons -->
       <div class="thm-badge">
         <a href="https://tryhackme.com/p/Bmej" target="_blank">
-          <img src="https://tryhackme-badges.s3.amazonaws.com/Bmej.png" alt="TryHackMe Badge" width="180">
+          <img src="https://tryhackme-badges.s3.amazonaws.com/Bmej.png" alt="TryHackMe Badge">
         </a>
       </div>
 
@@ -95,7 +99,7 @@
   <script>
     const lines = ['<span class="prompt">$</span> whoami','Brett M. - Cybersecurity Engineer','<span class="blink">█</span>'];
     const el = document.getElementById('typewriter');
-    el.innerHTML = '<span class="blink">█</span>';  // clear any leftover text
+    el.innerHTML = '<span class="blink">█</span>';
     let line = 0, char = 0;
     function type() {
       if (line < lines.length) {
