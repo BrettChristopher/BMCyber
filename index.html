@@ -33,7 +33,6 @@
     .prompt{color:#8be9fd;margin-right:0.5rem}
     .blink{animation:b 1s steps(1) infinite}
     @keyframes b{50%{opacity:0}}
-    /* THM badge now has the same hover effect as social buttons */
     .thm-badge{display:block;margin:2rem 0;transition:all .3s ease}
     .thm-badge:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(201,160,220,0.35)}
     .thm-badge img{
@@ -79,13 +78,13 @@
             <pre id="typewriter"><span class="blink">█</span></pre>
           </div>
         </div>
-        <!-- Badge now lifts and glows on hover just like the social icons -->
         <a href="https://tryhackme.com/p/Bmej" target="_blank" class="thm-badge">
           <img src="https://tryhackme-badges.s3.amazonaws.com/Bmej.png" alt="TryHackMe Badge">
         </a>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/brett-mejasic-2aa867a8/" target="_blank" class="social-btn">
-            <img src="https://cdn.simpleicons.org/linkedin/white" alt="LinkedIn">
+            <!-- Fixed LinkedIn icon – official white version that always loads -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
           </a>
           <a href="https://github.com/BrettChristopher" target="_blank" class="social-btn">
             <img src="https://cdn.simpleicons.org/github/white" alt="GitHub">
