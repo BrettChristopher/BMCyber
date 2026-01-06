@@ -12,15 +12,19 @@
     .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
     .content{margin-left:240px;padding:2rem;max-width:1000px}
     h2{margin-top:0;color:#c9a0dc}
-    .project-card{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc;transition:all .35s ease}
-    .project-card:hover{transform:translateY(-8px);box-shadow:0 12px 25px rgba(201,160,220,.25);border-left-color:#e3ccf5}
+
+    /* Card is now fully clickable */
+    .project-link{display:block;text-decoration:none;color:inherit;transition:all .35s ease}
+    .project-link:hover .project-card{transform:translateY(-8px);box-shadow:0 12px 25px rgba(201,160,220,.25);border-left-color:#e3ccf5}
+    .project-card{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
     .project-card h3{margin-top:0;color:#c9a0dc}
-    .project-card a{color:#c9a0dc;text-decoration:none}
-    .project-card a:hover{color:#e3ccf5;text-decoration:underline}
-    @media (max-width: 768px) {
+    .project-card p{color:#ddd;margin:0.8rem 0 0}
+
+    @media (max-width:768px){
       .sidebar{position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
       .content{margin-left:0!important;margin-top:75px;padding:1.5rem}
       body{flex-direction:column}
+      .project-link:hover .project-card{transform:translateY(-4px)}
     }
   </style>
 </head>
@@ -35,37 +39,47 @@
   <div class="content">
     <h2>Projects</h2>
 
-    <div class="project-card">
-      <h3><a href="projects-home-lab.html">Home Lab</a></h3>
-      <p>Detection & response lab with Security Onion, Splunk, and full packet capture.</p>
-    </div>
+    <a href="projects-home-lab.html" class="project-link">
+      <div class="project-card">
+        <h3>Home Lab</h3>
+        <p>Detection & response lab with Security Onion, Splunk, and full packet capture.</p>
+      </div>
+    </a>
 
-    <div class="project-card">
-      <h3><a href="projects-python.html">Python</a></h3>
-      <p>Hands-on projects using Python for scripting, automation, log parsing, and basic security tool development.</p>
-    </div>
+    <a href="projects-python.html" class="project-link">
+      <div class="project-card">
+        <h3>Python</h3>
+        <p>Hands-on projects using Python for scripting, automation, log parsing, and basic security tool development.</p>
+      </div>
+    </a>
 
-    <div class="project-card">
-      <h3><a href="projects-wireshark.html">Wireshark</a></h3>
-      <p>Packet analysis projects focused on intrusion detection, protocol deep-dives, and threat hunting techniques.</p>
-    </div>
+    <a href="projects-wireshark.html" class="project-link">
+      <div class="project-card">
+        <h3>Wireshark</h3>
+        <p>Packet analysis projects focused on intrusion detection, protocol deep-dives, and threat hunting techniques.</p>
+      </div>
+    </a>
 
-    <div class="project-card">
-      <h3><a href="projects-iam.html">IAM</a></h3>
-      <p>Real-world IAM deployments: Keycloak, PingFederate, SAML/OIDC, LDAP, MFA, identity brokering, and privileged access governance.</p>
-    </div>
+    <a href="projects-iam.html" class="project-link">
+      <div class="project-card">
+        <h3>IAM</h3>
+        <p>Real-world IAM deployments: Keycloak, PingFederate, SAML/OIDC, LDAP, MFA, identity brokering, and privileged access governance.</p>
+      </div>
+    </a>
 
-    <!-- New: Java -->
-    <div class="project-card">
-      <h3><a href="projects-java.html">Java</a></h3>
-      <p>Secure Java applications, encryption utilities, multi-threaded network tools, and custom security-focused projects.</p>
-    </div>
+    <a href="projects-java.html" class="project-link">
+      <div class="project-card">
+        <h3>Java</h3>
+        <p>Secure Java applications, encryption utilities, multi-threaded network tools, and custom security-focused projects.</p>
+      </div>
+    </a>
 
-    <!-- New: Cloud -->
-    <div class="project-card">
-      <h3><a href="projects-cloud.html">Cloud</a></h3>
-      <p>Cloud security projects across AWS, Azure, and GCP — IaC with Terraform, security group hardening, IAM policy analysis, logging, and monitoring setups.</p>
-    </div>
+    <a href="projects-cloud.html" class="project-link">
+      <div class="project-card">
+        <h3>Cloud</h3>
+        <p>Cloud security projects across AWS, Azure, and GCP — IaC with Terraform, security group hardening, IAM policy analysis, logging, and monitoring setups.</p>
+      </div>
+    </a>
 
   </div>
 </body>
