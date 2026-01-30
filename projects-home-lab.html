@@ -53,7 +53,7 @@
       </ul>
     </div>
 
-    <!-- NEW NETWORK TOPOLOGY SECTION -->
+    <!-- NEW NETWORK TOPOLOGY SECTION ADDED HERE -->
     <div class="section-box">
       <h3>Network Topology</h3>
       <p>High-level overview of the current defensive homelab layout:</p>
@@ -64,12 +64,12 @@
 
       <p><strong>Summary of current setup:</strong></p>
       <ul>
-        <li><strong>Lenovo ThinkPad T480</strong> – Management & analysis laptop (Windows 10 Pro). Used for browser access to VM dashboards.</li>
-        <li><strong>Dell OptiPlex 7050 Micro</strong> – Primary lab server (Windows 11 Pro + Hyper-V).</li>
-        <li>Single physical Ethernet → <strong>TP-Link unmanaged Gigabit switch</strong> → home router (internet).</li>
+        <li><strong>Lenovo ThinkPad T480</strong> – Management & analysis laptop (Windows 10 Pro). Used for browser access to VM dashboards and SSH.</li>
+        <li><strong>Dell OptiPlex 7050 Micro</strong> – Primary lab server (Windows 11 Pro + Hyper-V hypervisor).</li>
+        <li>Single physical Ethernet → <strong>TP-Link unmanaged Gigabit switch</strong> → home router (internet access).</li>
         <li>Hyper-V virtual switches:
           <ul>
-            <li><strong>External switch</strong> – bridged to physical Ethernet (WAN/internet)</li>
+            <li><strong>External switch</strong> – bridged to physical Ethernet (WAN/internet access)</li>
             <li><strong>Lab-LAN private switch</strong> – isolated internal lab network</li>
           </ul>
         </li>
