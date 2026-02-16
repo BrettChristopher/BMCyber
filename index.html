@@ -25,8 +25,7 @@
     .content{
       margin-left:240px;
       padding:2rem;
-      max-width:1200px; /* FIXED WIDTH */
-      position:relative;
+      max-width:1200px;
       min-height:100vh;
     }
 
@@ -34,7 +33,15 @@
     .tagline{color:#c9a0dc;font-size:1.1rem;margin-top:-10px;margin-bottom:20px;opacity:0.9}
     .section-box{background:#444;padding:1.5rem;border-radius:10px;border-left:5px solid #c9a0dc}
 
-    .home-stack{width:460px;margin-top:2rem}
+    /* Two-column layout */
+    .home-layout{
+      display:flex;
+      gap:40px;
+      align-items:flex-start;
+      margin-top:2rem;
+    }
+
+    .home-stack{width:460px}
     .terminal{width:460px;background:#1e1e1e;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.7);font-family:'Courier New',monospace;font-size:0.95rem}
     .terminal-header{background:#2d2d2d;padding:0.4rem 0.8rem;display:flex;gap:7px}
     .dot{width:10px;height:10px;border-radius:50%}
@@ -61,9 +68,6 @@
 
     /* Featured Projects Panel */
     .featured-projects{
-      position:absolute;
-      right:0;
-      top:40px;
       width:300px;
       background:#2c2a3a;
       padding:1.5rem;
@@ -76,7 +80,8 @@
     .featured-projects p{margin:0.3rem 0 1rem;color:#ddd;font-size:0.9rem;}
 
     @media (max-width:1200px){
-      .featured-projects{display:none;}
+      .home-layout{flex-direction:column;}
+      .featured-projects{width:100%;}
     }
 
     @media (max-width:768px){
@@ -102,26 +107,6 @@
     <h2>Welcome to BM Cyber</h2>
     <div class="tagline">Hands-on cybersecurity engineering, detection logic, and cloud security research.</div>
 
-    <!-- Featured Projects Panel -->
-    <div class="featured-projects">
-      <h3>Featured Projects</h3>
-
-      <div>
-        <a href="projects-go-phish.html">GoPhish Credential Harvesting Simulation</a>
-        <p>Controlled phishing campaign with cloned landing pages and credential capture workflow.</p>
-      </div>
-
-      <div>
-        <a href="projects-wireshark.html">Wireshark Packet Analysis</a>
-        <p>Deep-dive packet captures, protocol analysis, and threat detection techniques.</p>
-      </div>
-
-      <div>
-        <a href="projects-home-lab.html">Home Lab Environment</a>
-        <p>Security Onion, Splunk, full packet capture, and detection engineering lab.</p>
-      </div>
-    </div>
-
     <div class="section-box">
       <p>
         This site showcases my work in detection engineering, cloud security, identity & access management, 
@@ -134,30 +119,56 @@
         detection engineering and cloud security.
       </p>
 
-      <div class="home-stack">
-        <div class="terminal">
-          <div class="terminal-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
+      <!-- Two-column layout -->
+      <div class="home-layout">
+
+        <!-- Left: Terminal + Badge + Social -->
+        <div class="home-stack">
+          <div class="terminal">
+            <div class="terminal-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-body">
+              <pre id="typewriter"><span class="blink">█</span></pre>
+            </div>
           </div>
-          <div class="terminal-body">
-            <pre id="typewriter"><span class="blink">█</span></pre>
+
+          <a href="https://tryhackme.com/p/Bmej" target="_blank" class="thm-badge">
+            <img src="https://tryhackme-badges.s3.amazonaws.com/Bmej.png" alt="TryHackMe Badge">
+          </a>
+
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/brett-mejasic-2aa867a8/" target="_blank" class="social-btn">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/BrettChristopher" target="_blank" class="social-btn">
+              <img src="https://cdn.simpleicons.org/github/white" alt="GitHub">
+            </a>
           </div>
         </div>
 
-        <a href="https://tryhackme.com/p/Bmej" target="_blank" class="thm-badge">
-          <img src="https://tryhackme-badges.s3.amazonaws.com/Bmej.png" alt="TryHackMe Badge">
-        </a>
+        <!-- Right: Featured Projects -->
+        <div class="featured-projects">
+          <h3>Featured Projects</h3>
 
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/brett-mejasic-2aa867a8/" target="_blank" class="social-btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
-          </a>
-          <a href="https://github.com/BrettChristopher" target="_blank" class="social-btn">
-            <img src="https://cdn.simpleicons.org/github/white" alt="GitHub">
-          </a>
+          <div>
+            <a href="projects-go-phish.html">GoPhish Credential Harvesting Simulation</a>
+            <p>Controlled phishing campaign with cloned landing pages and credential capture workflow.</p>
+          </div>
+
+          <div>
+            <a href="projects-wireshark.html">Wireshark Packet Analysis</a>
+            <p>Deep-dive packet captures, protocol analysis, and threat detection techniques.</p>
+          </div>
+
+          <div>
+            <a href="projects-home-lab.html">Home Lab Environment</a>
+            <p>Security Onion, Splunk, full packet capture, and detection engineering lab.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
