@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoPhish Credential Harvesting Simulation – BM Cyber</title>
+  <link rel="icon" href="favicon.png" type="image/png">
 
+  <style>
+    body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
+    .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
+    .sidebar a{color:#fff;text-decoration:none;margin:1rem 0;font-weight:bold}
+    .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
+    .content{margin-left:240px;padding:2rem;max-width:900px}
+    h2{margin-top:0;color:#c9a0dc}
+    h3{color:#c9a0dc;margin-top:2rem}
+    .section-box{background:#444;padding:1.5rem;border-radius:10px;border-left:5px solid #c9a0dc;margin-bottom:2rem}
+    p{line-height:1.6}
+    ul{line-height:1.6}
+    @media (max-width:768px){
+      .sidebar{position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
+      .content{margin-left:0!important;margin-top:75px;padding:1.5rem}
+      body{flex-direction:column}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="projects.html">Projects</a>
+  </div>
+
+  <div class="content">
+    <h2>GoPhish Credential Harvesting Simulation</h2>
+
+    <div class="section-box">
+      <p>
+        This project documents a controlled phishing simulation conducted as part of a cybersecurity class. 
+        The goal was to design, deploy, and analyze a credential-harvesting phishing campaign using GoPhish, 
+        cloned landing pages, and a realistic social engineering pretext.
+      </p>
+
+      <p>
+        <strong>Ethical & Legal Notes:</strong><br>
+        • Fully authorized, instructor-approved simulation<br>
+        • No real individuals or organizations targeted<br>
+        • All accounts and infrastructure were isolated test environments<br>
+        • Participants provided opt-in consent and were debriefed afterward<br>
+        • No real credentials or personal data were collected
+      </p>
+    </div>
+
+    <h3>1. Campaign Goal & Defensive Value</h3>
+    <div class="section-box">
+      <p><strong>Objective:</strong> Simulate a realistic phishing attack designed to harvest credentials through a spoofed “security alert” email.</p>
+
+      <p><strong>Behavioral Goal:</strong></p>
+      <ul>
+        <li>Trigger the user to perform a password reset on a cloned login page</li>
+        <li>Analyze password creation patterns</li>
+        <li>Evaluate susceptibility to urgency-based pretexts</li>
+        <li>Study UI elements that increase or decrease trust</li>
+      </ul>
+
+      <p><strong>Security Value:</strong></p>
+      <ul>
+        <li>Understand how credential-harvesting kits operate</li>
+        <li>Study SMTP reputation and email delivery</li>
+        <li>Analyze cloned login page behavior</li>
+        <li>Identify detection opportunities in real environments</li>
+      </ul>
+    </div>
+
+    <h3>2. Target Profile (Simulated)</h3>
+    <div class="section-box">
+      <p><strong>Simulated User Persona:</strong></p>
+      <ul>
+        <li>Role: Graduate research assistant in cloud infrastructure</li>
+        <li>Interests: AWS, homelabs, cloud security</li>
+        <li>Behavior: Likely to trust professional-platform security alerts</li>
+      </ul>
+
+      <p><strong>Environmental Vulnerability:</strong>  
+      The persona relies heavily on professional networking platforms, making a spoofed “security alert” email a plausible attack vector.</p>
+
+      <p><strong>Privacy & Scope:</strong>  
+      All reconnaissance was performed on fictional accounts created solely for this lab.</p>
+    </div>
+
+    <h3>3. Attack Chain Simulation</h3>
+    <div class="section-box">
+      <p><strong>Attacker Infrastructure:</strong></p>
+      <ul>
+        <li>Cloudflare-protected web server</li>
+        <li>Backend database for storing captured test credentials</li>
+        <li>1:1 cloned password reset page</li>
+      </ul>
+
+      <p><strong>Delivery Mechanism:</strong></p>
+      <ul>
+        <li>SMTP relay using a high-reputation provider</li>
+        <li>Spoofed “Security Team” sender alias</li>
+        <li>Urgency-based pretext: “Password breach detected — reset required”</li>
+      </ul>
+
+      <p><strong>Exploit Workflow:</strong></p>
+      <ul>
+        <li>HTML email with embedded malicious link</li>
+        <li>Link redirects to cloned reset page</li>
+        <li>Credentials captured and logged</li>
+        <li>User silently redirected to the legitimate site</li>
+      </ul>
+    </div>
+
+    <h3>4. Email Construction</h3>
+    <div class="section-box">
+      <p><strong>Design Process:</strong></p>
+      <ul>
+        <li>Triggered a real password reset to study legitimate formatting</li>
+        <li>Extracted and cleaned the HTML</li>
+        <li>Used AI to refine layout and structure</li>
+        <li>Replaced branding, text, and URLs with malicious equivalents</li>
+      </ul>
+
+      <p><strong>Final Email Characteristics:</strong></p>
+      <ul>
+        <li>Subject: “Action Required: Your password may have been compromised”</li>
+        <li>Sender Alias: “Security Team”</li>
+        <li>Source: Test Gmail account</li>
+        <li>Social Engineering: Urgency + fear</li>
+        <li>Malicious link embedded in “Reset Password” button</li>
+      </ul>
+    </div>
+
+    <h3>5. Landing Page Construction</h3>
+    <div class="section-box">
+      <p><strong>Design Inspiration:</strong>  
+      A cloned version of a professional networking site’s password reset page.</p>
+
+      <p><strong>Technical Stack:</strong></p>
+      <ul>
+        <li>HTML5 structure</li>
+        <li>CSS3 styling</li>
+        <li>JavaScript for form handling and redirects</li>
+      </ul>
+
+      <p><strong>AI Usage:</strong>  
+      Used Gemini 3 to generate initial HTML/CSS, refine layout, and improve UI realism.</p>
+
+      <p><strong>Final Output Capabilities:</strong></p>
+      <ul>
+        <li>Accept username + new password</li>
+        <li>Log submissions to backend</li>
+        <li>Redirect user to legitimate site</li>
+      </ul>
+    </div>
+
+    <h3>6. Defensive Takeaways</h3>
+    <div class="section-box">
+      <p><strong>Email Security:</strong></p>
+      <ul>
+        <li>SMTP reputation heavily influences delivery success</li>
+        <li>SPF/DKIM/DMARC can be bypassed with clever aliasing</li>
+        <li>HTML emails remain a major attack vector</li>
+      </ul>
+
+      <p><strong>User Behavior:</strong></p>
+      <ul>
+        <li>Urgency and fear are highly effective</li>
+        <li>Professional-platform alerts are trusted more</li>
+      </ul>
+
+      <p><strong>Detection Opportunities:</strong></p>
+      <ul>
+        <li>Cloudflare-hosted phishing pages can still be fingerprinted</li>
+        <li>Redirect chains often reveal malicious intent</li>
+        <li>Email metadata exposes spoofing attempts</li>
+      </ul>
+
+      <p><strong>Mitigation Strategies:</strong></p>
+      <ul>
+        <li>Enforce MFA</li>
+        <li>Use password managers to detect domain mismatches</li>
+        <li>Implement browser-based phishing protection</li>
+        <li>Train users to inspect sender domains and URLs</li>
+      </ul>
+    </div>
+
+    <h3>Final Thoughts</h3>
+    <div class="section-box">
+      <p>
+        Running a controlled phishing simulation was one of the most eye-opening exercises in my homelab. 
+        It demonstrated how effective even basic social engineering can be — and how defenders must think 
+        like attackers to build stronger protections.
+      </p>
+
+      <p>
+        If you're interested in replicating this ethically, start with open-source tools like GoPhish or King Phisher, 
+        always obtain explicit consent, and debrief participants immediately.
+      </p>
+
+      <p style="opacity:0.7;">(Last updated: January 2026)</p>
+    </div>
+
+  </div>
+</body>
+</html>
