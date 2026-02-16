@@ -23,6 +23,7 @@
     .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
     .content{margin-left:240px;padding:2rem;max-width:900px}
     h2{margin-top:0;color:#c9a0dc}
+    .tagline{color:#c9a0dc;font-size:1.1rem;margin-top:-10px;margin-bottom:20px;opacity:0.9}
     .section-box{background:#444;padding:1.5rem;border-radius:10px;border-left:5px solid #c9a0dc}
     .home-stack{width:460px;margin-top:2rem}
     .terminal{width:460px;background:#1e1e1e;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.7);font-family:'Courier New',monospace;font-size:0.95rem}
@@ -63,10 +64,23 @@
     <a href="blog.html">Blog</a>
     <a href="projects.html">Projects</a>
   </div>
+
   <div class="content">
     <h2>Welcome to BM Cyber</h2>
+    <div class="tagline">Hands-on cybersecurity engineering, detection logic, and cloud security research.</div>
+
     <div class="section-box">
-      <p>Welcome to my cybersecurity portfolio. This site showcases my work in Blue Team operations, IAM tasks, Wireshark analysis, and hands-on cybersecurity projects.</p>
+      <p>
+        This site showcases my work in detection engineering, cloud security, identity & access management, 
+        packet analysis, and hands-on cybersecurity engineering. I build practical homelab projects that demonstrate 
+        how modern threats operate — and how defenders can detect, analyze, and mitigate them.
+      </p>
+
+      <p style="margin-top:1rem;opacity:0.9;">
+        I focus on developing real-world security engineering skills while pursuing remote opportunities in 
+        detection engineering and cloud security.
+      </p>
+
       <div class="home-stack">
         <div class="terminal">
           <div class="terminal-header">
@@ -78,12 +92,13 @@
             <pre id="typewriter"><span class="blink">█</span></pre>
           </div>
         </div>
+
         <a href="https://tryhackme.com/p/Bmej" target="_blank" class="thm-badge">
           <img src="https://tryhackme-badges.s3.amazonaws.com/Bmej.png" alt="TryHackMe Badge">
         </a>
+
         <div class="social-links">
           <a href="https://www.linkedin.com/in/brett-mejasic-2aa867a8/" target="_blank" class="social-btn">
-            <!-- Fixed LinkedIn icon – official white version that always loads -->
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
           </a>
           <a href="https://github.com/BrettChristopher" target="_blank" class="social-btn">
@@ -93,8 +108,13 @@
       </div>
     </div>
   </div>
+
   <script>
-    const lines = ['<span class="prompt">$</span> whoami','Brett M. - Cybersecurity Engineer','<span class="blink">█</span>'];
+    const lines = [
+      '<span class="prompt">$</span> whoami',
+      'Brett M. – Cybersecurity Engineer (Detection | Cloud | IAM)',
+      '<span class="blink">█</span>'
+    ];
     const el = document.getElementById('typewriter');
     el.innerHTML = '<span class="blink">█</span>';
     let line = 0, char = 0;
