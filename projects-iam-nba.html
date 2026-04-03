@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NBA Active Directory IAM Project – BM Cyber</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <style>
     body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
     .sidebar{width:220px;background:#2c2a3a;height:100vh;position:fixed;top:0;left:0;padding-top:2rem;display:flex;flex-direction:column;align-items:center;border-right:2px solid #c9a0dc}
@@ -33,7 +33,7 @@
 
   <div class="content">
     <h2>NBA Active Directory IAM Project</h2>
-    <p>A full Identity & Access Management (IAM) simulation using Microsoft Active Directory to model identity governance for an NBA organization. This project demonstrates RBAC, GPO enforcement, privileged access workflows, lifecycle automation, and auditing in a realistic enterprise-style environment.</p>
+    <p>A full Identity & Access Management (IAM) simulation using Microsoft Active Directory to model identity governance for an NBA organization.</p>
 
     <h3>Environment Overview</h3>
     <ul>
@@ -45,8 +45,6 @@
     </ul>
 
     <h3>Active Directory Architecture</h3>
-    <p>The directory is structured around NBA organizational roles to support clean identity lifecycle management and least‑privilege access.</p>
-
     <ul>
       <li>Players</li>
       <li>Coaches</li>
@@ -59,73 +57,17 @@
     </ul>
 
     <h3>RBAC & Access Controls</h3>
-    <p>All access is assigned through AD security groups—never directly to users.</p>
-
     <ul>
-      <li><strong>GRP_Players:</strong> Player portal, schedules</li>
-      <li><strong>GRP_Coaches:</strong> Playbooks, scouting reports</li>
-      <li><strong>GRP_Analytics:</strong> Dashboards, data models</li>
-      <li><strong>GRP_Medical:</strong> PHI, injury reports</li>
-      <li><strong>GRP_FrontOffice:</strong> Contracts, salary tools</li>
-      <li><strong>GRP_ITAdmins:</strong> Admin-level privileges</li>
-    </ul>
-
-    <h3>File Server Permissions</h3>
-    <p>NTFS permissions enforce separation of duties and protect sensitive team data.</p>
-
-    <ul>
-      <li>Coaches → Modify /Coaches</li>
-      <li>Analytics → Modify /Analytics</li>
-      <li>Medical → Full Control /Medical</li>
-      <li>Players → Read /Players</li>
-      <li>Front Office → Modify /FrontOffice</li>
-      <li>All Staff → Read /Shared</li>
-    </ul>
-
-    <h3>Group Policy Enforcement</h3>
-    <p>Security baselines and role-specific GPOs were deployed across the domain.</p>
-
-    <ul>
-      <li>14‑character minimum passwords</li>
-      <li>24‑password history</li>
-      <li>90‑day rotation</li>
-      <li>MFA for privileged accounts</li>
-      <li>BitLocker enforcement</li>
-      <li>Block unsigned scripts</li>
-      <li>Disable removable storage</li>
-      <li>SMB signing required</li>
-    </ul>
-
-    <h3>Privileged Access Management</h3>
-    <p>A tiered admin model and Just‑In‑Time (JIT) elevation workflow were implemented to reduce standing privileges.</p>
-
-    <ul>
-      <li><strong>Tier 0:</strong> Domain Admins</li>
-      <li><strong>Tier 1:</strong> Server Admins</li>
-      <li><strong>Tier 2:</strong> Helpdesk</li>
-      <li>Temporary elevation into GRP_ITAdmins with approval</li>
-    </ul>
-
-    <h3>Identity Lifecycle Automation</h3>
-    <p>Joiner–Mover–Leaver processes were automated using PowerShell.</p>
-
-    <ul>
-      <li><strong>Joiner:</strong> Auto‑create account, assign groups, provision home folder</li>
-      <li><strong>Mover:</strong> Update group membership based on new role</li>
-      <li><strong>Leaver:</strong> Disable account, revoke tokens, archive data</li>
-    </ul>
-
-    <h3>Auditing & Monitoring</h3>
-    <ul>
-      <li>Logon/logoff auditing</li>
-      <li>Group membership change alerts</li>
-      <li>File access auditing on sensitive folders</li>
-      <li>GPO modification tracking</li>
-      <li>Privileged elevation logs</li>
+      <li><strong>GRP_Players:</strong> Player portal</li>
+      <li><strong>GRP_Coaches:</strong> Playbooks</li>
+      <li><strong>GRP_Analytics:</strong> Dashboards</li>
+      <li><strong>GRP_Medical:</strong> PHI</li>
+      <li><strong>GRP_FrontOffice:</strong> Contracts</li>
+      <li><strong>GRP_ITAdmins:</strong> Admin privileges</li>
     </ul>
 
     <h3>Outcome</h3>
-    <p>This project demonstrates practical IAM engineering skills including identity governance, least‑privilege enforcement, privileged access management, lifecycle automation, and enterprise-grade security controls using Microsoft Active Directory.</p>
+    <p>This project demonstrates practical IAM engineering skills including identity governance, least‑privilege enforcement, privileged access management, lifecycle automation, and enterprise-grade security controls.</p>
 
     <p><a href="/projects-iam.html">← Back to IAM Projects</a></p>
   </div>
