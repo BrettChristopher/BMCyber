@@ -17,17 +17,19 @@
 
     /* Windows GUI Panel Styling */
     .gui-window {
-      background:#f2f2f2;
+      background:#ffffff;
       color:#000;
       border:1px solid #999;
       border-radius:6px;
       margin:20px 0;
       box-shadow:0 0 10px rgba(0,0,0,0.4);
+      font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
     .gui-titlebar {
       background:#e5e5e5;
       padding:6px 10px;
-      font-weight:bold;
+      font-weight:600;
+      font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       border-bottom:1px solid #bfbfbf;
       display:flex;
       justify-content:space-between;
@@ -47,11 +49,13 @@
     }
     .gui-content {
       padding:15px;
-      font-family:Consolas, monospace;
+      background:#ffffff;
+      font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       white-space:pre;
-      font-size:13px;
-      line-height:1.4;
+      font-size:14px;
+      line-height:1.45;
       overflow-x:auto;
+      color:#000;
     }
 
     @media (max-width: 768px) {
@@ -105,12 +109,11 @@
       <li><strong>GRP_ITAdmins:</strong> Admin privileges</li>
     </ul>
 
-    <!-- WINDOWS GUI MOCKUPS INSERTED BELOW -->
+    <!-- WINDOWS GUI MOCKUPS -->
 
     <h3>Windows GUI Mockups (Windows Server 2022 – ADUC Style)</h3>
     <p>These panels visually represent the AD structure, RBAC model, GPO enforcement, NTFS permissions, automation, and auditing implemented in this project.</p>
 
-    <!-- OU STRUCTURE -->
     <h4>Active Directory OU Structure</h4>
     <div class="gui-window">
       <div class="gui-titlebar">
@@ -132,7 +135,6 @@ nba.local
       </div>
     </div>
 
-    <!-- SECURITY GROUPS -->
     <h4>Security Groups (RBAC)</h4>
     <div class="gui-window">
       <div class="gui-titlebar">
@@ -152,7 +154,6 @@ GRP_Helpdesk           Global Security Group
       </div>
     </div>
 
-    <!-- GPO -->
     <h4>Group Policy Management</h4>
     <div class="gui-window">
       <div class="gui-titlebar">
@@ -184,7 +185,6 @@ NBA-Hardening
       </div>
     </div>
 
-    <!-- NTFS PERMISSIONS -->
     <h4>File Server NTFS Permissions</h4>
     <div class="gui-window">
       <div class="gui-titlebar">
@@ -214,7 +214,6 @@ NBA-Hardening
       </div>
     </div>
 
-    <!-- POWERSHELL -->
     <h4>PowerShell Automation</h4>
     <div class="gui-window">
       <div class="gui-titlebar">
@@ -246,7 +245,6 @@ PS C:\Scripts> .\Disable-NBAUser.ps1 -User jdoe
       </div>
     </div>
 
-    <!-- PRIVILEGED ACCESS MODEL -->
     <h4>Privileged Access Model</h4>
     <div class="gui-window">
       <div class="gui-titlebar">
@@ -274,7 +272,6 @@ JIT Elevation
       </div>
     </div>
 
-    <!-- AUDITING -->
     <h4>Auditing Dashboard</h4>
     <div class="gui-window">
       <div class="gui-titlebar">
