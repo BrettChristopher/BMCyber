@@ -1,10 +1,9 @@
-<!-- 4. projects-iam.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IAM Projects – BM Cyber</title>
+  <title>NBA Active Directory IAM Project – BM Cyber</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <style>
     body{margin:0;font-family:Calibri,sans-serif;background:#333;color:#fff;display:flex}
@@ -13,7 +12,6 @@
     .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
     .content{margin-left:240px;padding:2rem;max-width:1000px}
     h2,h3{color:#c9a0dc}
-    .project-card{background:#444;padding:1.5rem;margin-bottom:2rem;border-radius:10px;border-left:5px solid #c9a0dc}
     a{color:#c9a0dc;text-decoration:none}
     a:hover{color:#e3ccf5;text-decoration:underline}
 
@@ -24,6 +22,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="sidebar">
     <a href="index.html">Home</a>
@@ -33,26 +32,102 @@
   </div>
 
   <div class="content">
-    <h2>Identity & Access Management (IAM) Projects</h2>
-    <p>Real-world deployments, configurations, and deep dives into enterprise identity platforms.</p>
+    <h2>NBA Active Directory IAM Project</h2>
+    <p>A full Identity & Access Management (IAM) simulation using Microsoft Active Directory to model identity governance for an NBA organization. This project demonstrates RBAC, GPO enforcement, privileged access workflows, lifecycle automation, and auditing in a realistic enterprise-style environment.</p>
 
-    <!-- Keycloak Project Card -->
-    <div class="project-card">
-      <h3><a href="projects-iam-keycloak.html">Keycloak – Identity Broker & SSO Lab</a></h3>
-      <p>Full Keycloak deployment with OIDC/SAML, identity brokering (Google, Azure AD), social login, LDAP federation, WebAuthn MFA, custom themes, and Nginx + TLS.</p>
-      <p><strong>Status:</strong> Active lab • Docker + PostgreSQL • Ongoing</p>
-      <p><a href="projects-iam-keycloak.html">View Full Write-up →</a></p>
-    </div>
+    <h3>Environment Overview</h3>
+    <ul>
+      <li><strong>Domain:</strong> nba.local</li>
+      <li><strong>Domain Controller:</strong> DC01</li>
+      <li><strong>File Server:</strong> FS01</li>
+      <li><strong>Application Server:</strong> APP01</li>
+      <li><strong>OS:</strong> Windows Server 2022</li>
+    </ul>
 
-    <!-- NEW: NBA AD IAM Project Card -->
-    <div class="project-card">
-      <h3><a href="projects-iam-nba.html">NBA Active Directory IAM Project</a></h3>
-      <p>Enterprise IAM simulation using Microsoft Active Directory to model identity governance for an NBA organization. Includes RBAC, GPO enforcement, privileged access workflows, lifecycle automation, and auditing.</p>
-      <p><strong>Status:</strong> Completed • Windows Server • Active Directory</p>
-      <p><a href="projects-iam-nba.html">View Full Write-up →</a></p>
-    </div>
+    <h3>Active Directory Architecture</h3>
+    <p>The directory is structured around NBA organizational roles to support clean identity lifecycle management and least‑privilege access.</p>
 
-    <p><em>More IAM projects coming soon (PingFederate, Azure AD Conditional Access, SCIM, etc.)</em></p>
+    <ul>
+      <li>Players</li>
+      <li>Coaches</li>
+      <li>Analytics</li>
+      <li>Medical</li>
+      <li>FrontOffice</li>
+      <li>IT</li>
+      <li>PrivilegedRoles</li>
+      <li>DisabledUsers</li>
+    </ul>
+
+    <h3>RBAC & Access Controls</h3>
+    <p>All access is assigned through AD security groups—never directly to users.</p>
+
+    <ul>
+      <li><strong>GRP_Players:</strong> Player portal, schedules</li>
+      <li><strong>GRP_Coaches:</strong> Playbooks, scouting reports</li>
+      <li><strong>GRP_Analytics:</strong> Dashboards, data models</li>
+      <li><strong>GRP_Medical:</strong> PHI, injury reports</li>
+      <li><strong>GRP_FrontOffice:</strong> Contracts, salary tools</li>
+      <li><strong>GRP_ITAdmins:</strong> Admin-level privileges</li>
+    </ul>
+
+    <h3>File Server Permissions</h3>
+    <p>NTFS permissions enforce separation of duties and protect sensitive team data.</p>
+
+    <ul>
+      <li>Coaches → Modify /Coaches</li>
+      <li>Analytics → Modify /Analytics</li>
+      <li>Medical → Full Control /Medical</li>
+      <li>Players → Read /Players</li>
+      <li>Front Office → Modify /FrontOffice</li>
+      <li>All Staff → Read /Shared</li>
+    </ul>
+
+    <h3>Group Policy Enforcement</h3>
+    <p>Security baselines and role-specific GPOs were deployed across the domain.</p>
+
+    <ul>
+      <li>14‑character minimum passwords</li>
+      <li>24‑password history</li>
+      <li>90‑day rotation</li>
+      <li>MFA for privileged accounts</li>
+      <li>BitLocker enforcement</li>
+      <li>Block unsigned scripts</li>
+      <li>Disable removable storage</li>
+      <li>SMB signing required</li>
+    </ul>
+
+    <h3>Privileged Access Management</h3>
+    <p>A tiered admin model and Just‑In‑Time (JIT) elevation workflow were implemented to reduce standing privileges.</p>
+
+    <ul>
+      <li><strong>Tier 0:</strong> Domain Admins</li>
+      <li><strong>Tier 1:</strong> Server Admins</li>
+      <li><strong>Tier 2:</strong> Helpdesk</li>
+      <li>Temporary elevation into GRP_ITAdmins with approval</li>
+    </ul>
+
+    <h3>Identity Lifecycle Automation</h3>
+    <p>Joiner–Mover–Leaver processes were automated using PowerShell.</p>
+
+    <ul>
+      <li><strong>Joiner:</strong> Auto‑create account, assign groups, provision home folder</li>
+      <li><strong>Mover:</strong> Update group membership based on new role</li>
+      <li><strong>Leaver:</strong> Disable account, revoke tokens, archive data</li>
+    </ul>
+
+    <h3>Auditing & Monitoring</h3>
+    <ul>
+      <li>Logon/logoff auditing</li>
+      <li>Group membership change alerts</li>
+      <li>File access auditing on sensitive folders</li>
+      <li>GPO modification tracking</li>
+      <li>Privileged elevation logs</li>
+    </ul>
+
+    <h3>Outcome</h3>
+    <p>This project demonstrates practical IAM engineering skills including identity governance, least‑privilege enforcement, privileged access management, lifecycle automation, and enterprise-grade security controls using Microsoft Active Directory.</p>
+
+    <p><a href="projects-iam.html">← Back to IAM Projects</a></p>
   </div>
 </body>
 </html>
