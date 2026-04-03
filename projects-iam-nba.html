@@ -14,6 +14,16 @@
     h2,h3{color:#c9a0dc}
     a{color:#c9a0dc;text-decoration:none}
     a:hover{color:#e3ccf5;text-decoration:underline}
+    pre {
+      background:#222;
+      padding:1rem;
+      border-radius:8px;
+      overflow-x:auto;
+      border:1px solid #555;
+      color:#e6e6e6;
+      font-size:14px;
+      line-height:1.4;
+    }
 
     @media (max-width: 768px) {
       .sidebar {position:fixed;top:0;left:0;width:100%;height:auto;padding:1rem 0;flex-direction:row;justify-content:center;gap:2rem;border-right:none;border-bottom:3px solid #c9a0dc;z-index:1000}
@@ -65,6 +75,172 @@
       <li><strong>GRP_FrontOffice:</strong> Contracts</li>
       <li><strong>GRP_ITAdmins:</strong> Admin privileges</li>
     </ul>
+
+    <!-- NEW SECTION INSERTED HERE -->
+    <h3>Windows GUI Mockups (Light Mode)</h3>
+    <p>These mockups visually represent the AD structure, RBAC model, GPO enforcement, NTFS permissions, automation, and auditing implemented in this project.</p>
+
+    <h4>Active Directory OU Structure</h4>
+    <pre>
+┌──────────────────────────────────────────────────────────────┐
+│ Active Directory Users and Computers                         │
+│ Domain: nba.local                                            │
+├──────────────────────────────────────────────────────────────┤
+│ nba.local                                                    │
+│   ├── Players                                                │
+│   ├── Coaches                                                │
+│   ├── Analytics                                              │
+│   ├── Medical                                                │
+│   ├── FrontOffice                                            │
+│   ├── IT                                                     │
+│   ├── PrivilegedRoles                                        │
+│   └── DisabledUsers                                          │
+└──────────────────────────────────────────────────────────────┘
+    </pre>
+
+    <h4>Security Groups (RBAC)</h4>
+    <pre>
+┌──────────────────────────────────────────────────────────────┐
+│ Active Directory – Security Groups                           │
+├──────────────────────────────────────────────────────────────┤
+│ GRP_Players            Global Security Group                 │
+│ GRP_Coaches            Global Security Group                 │
+│ GRP_Analytics          Global Security Group                 │
+│ GRP_Medical            Global Security Group                 │
+│ GRP_FrontOffice        Global Security Group                 │
+│ GRP_ITAdmins           Global Security Group                 │
+│ GRP_Helpdesk           Global Security Group                 │
+└──────────────────────────────────────────────────────────────┘
+    </pre>
+
+    <h4>Group Policy Management</h4>
+    <pre>
+┌──────────────────────────────────────────────────────────────┐
+│ Group Policy Management – nba.local                          │
+├──────────────────────────────────────────────────────────────┤
+│ NBA-Password-Policy                                          │
+│   • Minimum length: 14                                       │
+│   • Password history: 24                                     │
+│   • Max age: 90 days                                         │
+│   • Complexity: Enabled                                      │
+│                                                              │
+│ NBA-BitLocker-Policy                                         │
+│   • Require TPM                                              │
+│   • XTS-AES 256                                              │
+│                                                              │
+│ NBA-MFA-Admins                                               │
+│   • Require MFA for Tier 0/1                                 │
+│                                                              │
+│ NBA-Disable-USB                                              │
+│   • Removable storage: Blocked                               │
+│                                                              │
+│ NBA-Hardening                                                │
+│   • SMB Signing Required                                     │
+│   • Disable unsigned PowerShell scripts                      │
+└──────────────────────────────────────────────────────────────┘
+    </pre>
+
+    <h4>File Server NTFS Permissions</h4>
+    <pre>
+┌──────────────────────────────────────────────────────────────┐
+│ FS01 – NTFS Permissions                                      │
+├──────────────────────────────────────────────────────────────┤
+│ Folder: \\FS01\Coaches                                       │
+│   Coaches Group        Modify                                │
+│   IT Admins            Full Control                          │
+│                                                              │
+│ Folder: \\FS01\Analytics                                     │
+│   Analytics Group      Modify                                │
+│   IT Admins            Full Control                          │
+│                                                              │
+│ Folder: \\FS01\Medical                                       │
+│   Medical Group        Full Control                          │
+│   IT Admins            Full Control                          │
+│                                                              │
+│ Folder: \\FS01\Players                                       │
+│   Players Group        Read                                  │
+│                                                              │
+│ Folder: \\FS01\Shared                                        │
+│   Authenticated Users  Read                                  │
+└──────────────────────────────────────────────────────────────┘
+    </pre>
+
+    <h4>PowerShell Automation</h4>
+    <pre>
+PS C:\Scripts> .\New-NBAUser.ps1 -Name "John Doe" -Role "Analytics"
+
+[+] Creating AD account...
+[+] Assigning security groups: GRP_Analytics
+[+] Creating home directory: \\FS01\Users\jdoe
+[+] Applying baseline GPO
+[✓] User creation complete.
+    </pre>
+
+    <pre>
+PS C:\Scripts> .\Update-NBAUserRole.ps1 -User jdoe -NewRole "Coaches"
+
+[+] Removing old groups...
+[+] Adding new groups: GRP_Coaches
+[+] Updating permissions...
+[✓] Role update complete.
+    </pre>
+
+    <pre>
+PS C:\Scripts> .\Disable-NBAUser.ps1 -User jdoe
+
+[+] Disabling account...
+[+] Revoking sessions...
+[+] Archiving home directory...
+[+] Moving to DisabledUsers OU
+[✓] Offboarding complete.
+    </pre>
+
+    <h4>Privileged Access Model</h4>
+    <pre>
+┌──────────────────────────────────────────────────────────────┐
+│ Privileged Access Model (Tiered Admin Structure)             │
+├──────────────────────────────────────────────────────────────┤
+│ Tier 0 – Domain Admins                                       │
+│   • Full domain control                                      │
+│   • Protected accounts                                       │
+│                                                              │
+│ Tier 1 – Server Admins                                       │
+│   • Manage FS01, APP01, DC01                                 │
+│   • No domain-wide rights                                    │
+│                                                              │
+│ Tier 2 – Helpdesk                                            │
+│   • Password resets                                          │
+│   • Basic user support                                       │
+│                                                              │
+│ JIT Elevation                                                │
+│   • Temporary membership in GRP_ITAdmins                     │
+│   • Approval required                                        │
+└──────────────────────────────────────────────────────────────┘
+    </pre>
+
+    <h4>Auditing Dashboard</h4>
+    <pre>
+┌──────────────────────────────────────────────────────────────┐
+│ NBA Security Monitoring Dashboard                            │
+├──────────────────────────────────────────────────────────────┤
+│ Recent Events                                                │
+│   • 12 Logon failures (Players OU)                           │
+│   • 3 Group membership changes (Analytics)                   │
+│   • 1 GPO modification (NBA-Password-Policy)                 │
+│   • 5 File access alerts (Medical folder)                    │
+│                                                              │
+│ Privileged Activity                                          │
+│   • 2 JIT elevation requests                                 │
+│   • 1 Domain Admin logon                                     │
+│                                                              │
+│ Compliance Status                                            │
+│   • BitLocker: 100%                                          │
+│   • MFA for Admins: Enabled                                  │
+│   • Password Policy: Enforced                                │
+└──────────────────────────────────────────────────────────────┘
+    </pre>
+
+    <!-- END OF INSERTED MOCKUPS -->
 
     <h3>Outcome</h3>
     <p>This project demonstrates practical IAM engineering skills including identity governance, least‑privilege enforcement, privileged access management, lifecycle automation, and enterprise-grade security controls.</p>
