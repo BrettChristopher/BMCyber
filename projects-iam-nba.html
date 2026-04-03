@@ -11,18 +11,47 @@
     .sidebar a{color:#fff;text-decoration:none;margin:1rem 0;font-weight:bold}
     .sidebar a:hover{color:#c9a0dc;text-decoration:underline}
     .content{margin-left:240px;padding:2rem;max-width:1000px}
-    h2,h3{color:#c9a0dc}
+    h2,h3,h4{color:#c9a0dc}
     a{color:#c9a0dc;text-decoration:none}
     a:hover{color:#e3ccf5;text-decoration:underline}
-    pre {
-      background:#222;
-      padding:1rem;
-      border-radius:8px;
-      overflow-x:auto;
-      border:1px solid #555;
-      color:#e6e6e6;
+
+    /* Windows GUI Panel Styling */
+    .gui-window {
+      background:#f2f2f2;
+      color:#000;
+      border:1px solid #999;
+      border-radius:6px;
+      margin:20px 0;
+      box-shadow:0 0 10px rgba(0,0,0,0.4);
+    }
+    .gui-titlebar {
+      background:#e5e5e5;
+      padding:6px 10px;
+      font-weight:bold;
+      border-bottom:1px solid #bfbfbf;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
       font-size:14px;
+    }
+    .gui-buttons {
+      display:flex;
+      gap:6px;
+    }
+    .gui-btn {
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:#bbb;
+      border:1px solid #999;
+    }
+    .gui-content {
+      padding:15px;
+      font-family:Consolas, monospace;
+      white-space:pre;
+      font-size:13px;
       line-height:1.4;
+      overflow-x:auto;
     }
 
     @media (max-width: 768px) {
@@ -76,171 +105,203 @@
       <li><strong>GRP_ITAdmins:</strong> Admin privileges</li>
     </ul>
 
-    <!-- NEW SECTION INSERTED HERE -->
-    <h3>Windows GUI Mockups (Light Mode)</h3>
-    <p>These mockups visually represent the AD structure, RBAC model, GPO enforcement, NTFS permissions, automation, and auditing implemented in this project.</p>
+    <!-- WINDOWS GUI MOCKUPS INSERTED BELOW -->
 
+    <h3>Windows GUI Mockups (Windows Server 2022 – ADUC Style)</h3>
+    <p>These panels visually represent the AD structure, RBAC model, GPO enforcement, NTFS permissions, automation, and auditing implemented in this project.</p>
+
+    <!-- OU STRUCTURE -->
     <h4>Active Directory OU Structure</h4>
-    <pre>
-┌──────────────────────────────────────────────────────────────┐
-│ Active Directory Users and Computers                         │
-│ Domain: nba.local                                            │
-├──────────────────────────────────────────────────────────────┤
-│ nba.local                                                    │
-│   ├── Players                                                │
-│   ├── Coaches                                                │
-│   ├── Analytics                                              │
-│   ├── Medical                                                │
-│   ├── FrontOffice                                            │
-│   ├── IT                                                     │
-│   ├── PrivilegedRoles                                        │
-│   └── DisabledUsers                                          │
-└──────────────────────────────────────────────────────────────┘
-    </pre>
+    <div class="gui-window">
+      <div class="gui-titlebar">
+        Active Directory Users and Computers
+        <div class="gui-buttons">
+          <div class="gui-btn"></div><div class="gui-btn"></div><div class="gui-btn"></div>
+        </div>
+      </div>
+      <div class="gui-content">
+nba.local
+ ├── Players
+ ├── Coaches
+ ├── Analytics
+ ├── Medical
+ ├── FrontOffice
+ ├── IT
+ ├── PrivilegedRoles
+ └── DisabledUsers
+      </div>
+    </div>
 
+    <!-- SECURITY GROUPS -->
     <h4>Security Groups (RBAC)</h4>
-    <pre>
-┌──────────────────────────────────────────────────────────────┐
-│ Active Directory – Security Groups                           │
-├──────────────────────────────────────────────────────────────┤
-│ GRP_Players            Global Security Group                 │
-│ GRP_Coaches            Global Security Group                 │
-│ GRP_Analytics          Global Security Group                 │
-│ GRP_Medical            Global Security Group                 │
-│ GRP_FrontOffice        Global Security Group                 │
-│ GRP_ITAdmins           Global Security Group                 │
-│ GRP_Helpdesk           Global Security Group                 │
-└──────────────────────────────────────────────────────────────┘
-    </pre>
+    <div class="gui-window">
+      <div class="gui-titlebar">
+        Active Directory – Security Groups
+        <div class="gui-buttons">
+          <div class="gui-btn"></div><div class="gui-btn"></div><div class="gui-btn"></div>
+        </div>
+      </div>
+      <div class="gui-content">
+GRP_Players            Global Security Group
+GRP_Coaches            Global Security Group
+GRP_Analytics          Global Security Group
+GRP_Medical            Global Security Group
+GRP_FrontOffice        Global Security Group
+GRP_ITAdmins           Global Security Group
+GRP_Helpdesk           Global Security Group
+      </div>
+    </div>
 
+    <!-- GPO -->
     <h4>Group Policy Management</h4>
-    <pre>
-┌──────────────────────────────────────────────────────────────┐
-│ Group Policy Management – nba.local                          │
-├──────────────────────────────────────────────────────────────┤
-│ NBA-Password-Policy                                          │
-│   • Minimum length: 14                                       │
-│   • Password history: 24                                     │
-│   • Max age: 90 days                                         │
-│   • Complexity: Enabled                                      │
-│                                                              │
-│ NBA-BitLocker-Policy                                         │
-│   • Require TPM                                              │
-│   • XTS-AES 256                                              │
-│                                                              │
-│ NBA-MFA-Admins                                               │
-│   • Require MFA for Tier 0/1                                 │
-│                                                              │
-│ NBA-Disable-USB                                              │
-│   • Removable storage: Blocked                               │
-│                                                              │
-│ NBA-Hardening                                                │
-│   • SMB Signing Required                                     │
-│   • Disable unsigned PowerShell scripts                      │
-└──────────────────────────────────────────────────────────────┘
-    </pre>
+    <div class="gui-window">
+      <div class="gui-titlebar">
+        Group Policy Management Console
+        <div class="gui-buttons">
+          <div class="gui-btn"></div><div class="gui-btn"></div><div class="gui-btn"></div>
+        </div>
+      </div>
+      <div class="gui-content">
+NBA-Password-Policy
+ • Minimum length: 14
+ • Password history: 24
+ • Max age: 90 days
+ • Complexity: Enabled
 
+NBA-BitLocker-Policy
+ • Require TPM
+ • XTS-AES 256
+
+NBA-MFA-Admins
+ • Require MFA for Tier 0/1
+
+NBA-Disable-USB
+ • Removable storage: Blocked
+
+NBA-Hardening
+ • SMB Signing Required
+ • Disable unsigned PowerShell scripts
+      </div>
+    </div>
+
+    <!-- NTFS PERMISSIONS -->
     <h4>File Server NTFS Permissions</h4>
-    <pre>
-┌──────────────────────────────────────────────────────────────┐
-│ FS01 – NTFS Permissions                                      │
-├──────────────────────────────────────────────────────────────┤
-│ Folder: \\FS01\Coaches                                       │
-│   Coaches Group        Modify                                │
-│   IT Admins            Full Control                          │
-│                                                              │
-│ Folder: \\FS01\Analytics                                     │
-│   Analytics Group      Modify                                │
-│   IT Admins            Full Control                          │
-│                                                              │
-│ Folder: \\FS01\Medical                                       │
-│   Medical Group        Full Control                          │
-│   IT Admins            Full Control                          │
-│                                                              │
-│ Folder: \\FS01\Players                                       │
-│   Players Group        Read                                  │
-│                                                              │
-│ Folder: \\FS01\Shared                                        │
-│   Authenticated Users  Read                                  │
-└──────────────────────────────────────────────────────────────┘
-    </pre>
+    <div class="gui-window">
+      <div class="gui-titlebar">
+        FS01 – NTFS Permissions
+        <div class="gui-buttons">
+          <div class="gui-btn"></div><div class="gui-btn"></div><div class="gui-btn"></div>
+        </div>
+      </div>
+      <div class="gui-content">
+\\FS01\Coaches
+ • Coaches Group → Modify
+ • IT Admins → Full Control
 
+\\FS01\Analytics
+ • Analytics Group → Modify
+ • IT Admins → Full Control
+
+\\FS01\Medical
+ • Medical Group → Full Control
+ • IT Admins → Full Control
+
+\\FS01\Players
+ • Players Group → Read
+
+\\FS01\Shared
+ • Authenticated Users → Read
+      </div>
+    </div>
+
+    <!-- POWERSHELL -->
     <h4>PowerShell Automation</h4>
-    <pre>
+    <div class="gui-window">
+      <div class="gui-titlebar">
+        Windows PowerShell
+        <div class="gui-buttons">
+          <div class="gui-btn"></div><div class="gui-btn"></div><div class="gui-btn"></div>
+        </div>
+      </div>
+      <div class="gui-content">
 PS C:\Scripts> .\New-NBAUser.ps1 -Name "John Doe" -Role "Analytics"
-
 [+] Creating AD account...
 [+] Assigning security groups: GRP_Analytics
 [+] Creating home directory: \\FS01\Users\jdoe
 [+] Applying baseline GPO
 [✓] User creation complete.
-    </pre>
 
-    <pre>
 PS C:\Scripts> .\Update-NBAUserRole.ps1 -User jdoe -NewRole "Coaches"
-
 [+] Removing old groups...
 [+] Adding new groups: GRP_Coaches
 [+] Updating permissions...
 [✓] Role update complete.
-    </pre>
 
-    <pre>
 PS C:\Scripts> .\Disable-NBAUser.ps1 -User jdoe
-
 [+] Disabling account...
 [+] Revoking sessions...
 [+] Archiving home directory...
 [+] Moving to DisabledUsers OU
 [✓] Offboarding complete.
-    </pre>
+      </div>
+    </div>
 
+    <!-- PRIVILEGED ACCESS MODEL -->
     <h4>Privileged Access Model</h4>
-    <pre>
-┌──────────────────────────────────────────────────────────────┐
-│ Privileged Access Model (Tiered Admin Structure)             │
-├──────────────────────────────────────────────────────────────┤
-│ Tier 0 – Domain Admins                                       │
-│   • Full domain control                                      │
-│   • Protected accounts                                       │
-│                                                              │
-│ Tier 1 – Server Admins                                       │
-│   • Manage FS01, APP01, DC01                                 │
-│   • No domain-wide rights                                    │
-│                                                              │
-│ Tier 2 – Helpdesk                                            │
-│   • Password resets                                          │
-│   • Basic user support                                       │
-│                                                              │
-│ JIT Elevation                                                │
-│   • Temporary membership in GRP_ITAdmins                     │
-│   • Approval required                                        │
-└──────────────────────────────────────────────────────────────┘
-    </pre>
+    <div class="gui-window">
+      <div class="gui-titlebar">
+        Privileged Access Model
+        <div class="gui-buttons">
+          <div class="gui-btn"></div><div class="gui-btn"></div><div class="gui-btn"></div>
+        </div>
+      </div>
+      <div class="gui-content">
+Tier 0 – Domain Admins
+ • Full domain control
+ • Protected accounts
 
+Tier 1 – Server Admins
+ • Manage FS01, APP01, DC01
+ • No domain-wide rights
+
+Tier 2 – Helpdesk
+ • Password resets
+ • Basic user support
+
+JIT Elevation
+ • Temporary membership in GRP_ITAdmins
+ • Approval required
+      </div>
+    </div>
+
+    <!-- AUDITING -->
     <h4>Auditing Dashboard</h4>
-    <pre>
-┌──────────────────────────────────────────────────────────────┐
-│ NBA Security Monitoring Dashboard                            │
-├──────────────────────────────────────────────────────────────┤
-│ Recent Events                                                │
-│   • 12 Logon failures (Players OU)                           │
-│   • 3 Group membership changes (Analytics)                   │
-│   • 1 GPO modification (NBA-Password-Policy)                 │
-│   • 5 File access alerts (Medical folder)                    │
-│                                                              │
-│ Privileged Activity                                          │
-│   • 2 JIT elevation requests                                 │
-│   • 1 Domain Admin logon                                     │
-│                                                              │
-│ Compliance Status                                            │
-│   • BitLocker: 100%                                          │
-│   • MFA for Admins: Enabled                                  │
-│   • Password Policy: Enforced                                │
-└──────────────────────────────────────────────────────────────┘
-    </pre>
+    <div class="gui-window">
+      <div class="gui-titlebar">
+        Security Monitoring Dashboard
+        <div class="gui-buttons">
+          <div class="gui-btn"></div><div class="gui-btn"></div><div class="gui-btn"></div>
+        </div>
+      </div>
+      <div class="gui-content">
+Recent Events
+ • 12 Logon failures (Players OU)
+ • 3 Group membership changes (Analytics)
+ • 1 GPO modification (NBA-Password-Policy)
+ • 5 File access alerts (Medical folder)
 
-    <!-- END OF INSERTED MOCKUPS -->
+Privileged Activity
+ • 2 JIT elevation requests
+ • 1 Domain Admin logon
+
+Compliance Status
+ • BitLocker: 100%
+ • MFA for Admins: Enabled
+ • Password Policy: Enforced
+      </div>
+    </div>
+
+    <!-- END MOCKUPS -->
 
     <h3>Outcome</h3>
     <p>This project demonstrates practical IAM engineering skills including identity governance, least‑privilege enforcement, privileged access management, lifecycle automation, and enterprise-grade security controls.</p>
